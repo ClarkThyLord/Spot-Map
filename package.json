@@ -1,14 +1,14 @@
 {
   "name": "xyz.spot.map",
-  "version": "1.0.0",
-  "description": "Brand new cordova project with framework7 - vue - webpack!",
+  "version": "0.0.0",
+  "description": "Entry for the COVID-19 Data Challenge",
   "scripts": {
     "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"
   },
   "keywords": [
     "ecosystem:cordova"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

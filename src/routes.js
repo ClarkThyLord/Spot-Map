@@ -1,12 +1,12 @@
-import Home from './assets/vue/pages/home.vue';
-import AboutPage from './assets/vue/pages/about.vue';
-import FormPage from './assets/vue/pages/form.vue';
-import DynamicRoutePage from './assets/vue/pages/dynamic-route.vue';
+import Home from './pages/home.vue';
+import AboutPage from './pages/about.vue';
+import FormPage from './pages/form.vue';
+import DynamicRoutePage from './pages/dynamic-route.vue';
 
-import PanelLeftPage from './assets/vue/pages/panel-left.vue';
-import ColorThemes from './assets/vue/pages/color-themes.vue';
-import Chat from './assets/vue/pages/chat.vue';
-import Vuex from './assets/vue/pages/vuex.vue';
+import PanelLeftPage from './pages/panel-left.vue';
+import ColorThemes from './pages/color-themes.vue';
+import Chat from './pages/chat.vue';
+import Vuex from './pages/vuex.vue';
 
 export default [
   {

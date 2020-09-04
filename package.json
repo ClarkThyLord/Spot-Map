@@ -5,9 +5,6 @@
   "scripts": {
     "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"
   },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -25,12 +25,12 @@
 Communities along the U.S.-Mexico border have been hard hit by COVID-19. While researchers race to develop a vaccine, life and work must continue. How can we confidently and transparently decide what is safe? Can we more efficiently mine existing data and/or gather new data for analysis to assess the risks of activities in different spheres of life, and thus more effectively direct resources and interventions? Specifically, how can we better understand risk levels in real-time for different situations and communicate them to the public?
 
 ## Usage
-| Command       | Description |
-| ------------- |:-------------:|
-| cordova build ios/android/browser    | Build for production |
-| cordova run ios -- --lr              | Run for ios with live reload     |
-| cordova run android -- --lr          | Run for android with live reload |
-| cordova run browser -- --live-reload | Run for browser with live reload |
+| Command       | Description                                             |
+| ------------- |:-------------------------------------------------------:|
+| cordova build ios/android/browser    | Build for production             |
+| cordova run ios -- -- --lr           | Run for ios with live reload     |
+| cordova run android -- -- --lr       | Run for android with live reload |
+| cordova run browser -- -- --lr       | Run for browser with live reload |
 
 
 ---

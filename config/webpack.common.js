@@ -48,7 +48,10 @@ module.exports = function (options) {
         },
         {
           test: /\.svg$/,
-          loader: 'url-loader'
+          loader: 'url-loader',
+          options: {
+            esModule: false,
+          }
         },
         {
           test: /\.scss$/,

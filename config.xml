@@ -90,4 +90,4 @@
         <splash src="res/screen/windows/splashscreen.png" target="SplashScreen"/>
         <splash src="res/screen/windows/splashscreenphone.png" target="SplashScreenPhone"/>
     </platform>
-</widget>
+<allow-navigation href="*"/></widget>

@@ -6,14 +6,14 @@
       </div>
 
       <f7-list class="sidebar-items">
-        <f7-list-item title="Map" link="#"></f7-list-item>
-        <f7-list-item title="History" link="#"></f7-list-item>
-        <f7-list-item title="Alert COVID" link="#"></f7-list-item>
-        <f7-list-item title="Generate QR" link="#"></f7-list-item>
+        <f7-list-item title="Map" link="/" panel-close></f7-list-item>
+        <f7-list-item title="History" link="/history/" panel-close></f7-list-item>
+        <f7-list-item title="Alert COVID" link="/alert/" panel-close></f7-list-item>
+        <f7-list-item title="Generate QR" link="/generate/" panel-close></f7-list-item>
       </f7-list>
 
       <div class="sidebar-info">
-        <f7-link style="margin-bottom: 5px;">Business? Sign-in here</f7-link>
+        <f7-link style="margin-bottom: 5px;" link="/sign-in/" panel-close>Business? Sign-in here</f7-link>
         <br />
         <f7-link href="https://github.com/ClarkThyLord/Spot-Map#about" external target="_blank">
           <f7-icon f7="info_circle"></f7-icon>

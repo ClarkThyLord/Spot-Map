@@ -7,14 +7,37 @@
 
       <f7-list class="sidebar-items">
         <f7-list-item title="Map" link="/" panel-close></f7-list-item>
-        <f7-list-item title="History" link="/history/" panel-close></f7-list-item>
-        <f7-list-item title="Alert COVID" link="/alert/" panel-close></f7-list-item>
-        <f7-list-item title="Generate QR" link="/generate/" panel-close></f7-list-item>
+        <!-- <f7-block-title>Personal</f7-block-title> -->
+        <f7-list>
+          <f7-list-item title="History" link="/history/" panel-close></f7-list-item>
+          <f7-list-item title="Metrics" link="/metrics-client/" panel-close></f7-list-item>
+          <f7-list-item title="Alert COVID" link="/alert-business/" panel-close></f7-list-item>
+        </f7-list>
+        <f7-block-title v-if="business">
+          Business
+          <f7-link
+            style="margin-bottom: 5px; float: inline-end;"
+            panel-close
+            @click="sign_out"
+          >Sign-out</f7-link>
+          <!-- <f7-link style="margin-bottom: 5px; float: inline-end;" href="/sign-in/" panel-close>Sign-in</f7-link> -->
+        </f7-block-title>
+        <f7-list v-if="business">
+          <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
+          <f7-list-item title="Report COVID" link="/alert-client/" panel-close></f7-list-item>
+          <f7-list-item title="Business Metrics" link="/metrics-business/" panel-close></f7-list-item>
+        </f7-list>
       </f7-list>
 
       <div class="sidebar-info">
-        <f7-link style="margin-bottom: 5px;" link="/sign-in/" panel-close>Business? Sign-in here</f7-link>
-        <br />
+        <f7-link
+          v-if="!business"
+          style="margin-bottom: 5px;"
+          href="/sign-in/"
+          panel-close
+          @click="sign_in"
+        >Business? Sign-in here</f7-link>
+        <br v-if="!business" />
         <f7-link href="https://github.com/ClarkThyLord/Spot-Map#about" external target="_blank">
           <f7-icon f7="info_circle"></f7-icon>
         </f7-link>
@@ -30,7 +53,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {
+      business: true,
+    };
+  },
+  methods: {
+    sign_in: function (event) {
+      this.business = true;
+    },
+    sign_out: function (event) {
+      this.business = false;
+    },
+  },
+};
 </script>
 
 <style scoped>

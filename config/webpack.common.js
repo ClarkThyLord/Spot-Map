@@ -36,6 +36,7 @@ module.exports = function (options) {
           test: /\.(png|jpe?g|gif)$/,
           loader: 'file-loader',
           options: {
+            esModule: false,
             name: '[name].[ext]?[hash]'
           }
         },

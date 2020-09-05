@@ -1,5 +1,9 @@
 <template>
   <f7-page :page-content="false">
+    <div style="display: flex;">
+      <span style="flex: 1;">History</span>
+      <span>Clear History</span>
+    </div>
     <f7-block-title>History</f7-block-title>
     <f7-list media-list>
       <f7-list-item

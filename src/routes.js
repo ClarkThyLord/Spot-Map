@@ -3,7 +3,6 @@ import History from './pages/history.vue';
 import AlertClient from './pages/alert.client.vue';
 import AlertBusiness from './pages/alert.business.vue';
 import GenerateQR from './pages/generate-qr.vue';
-import SignIn from './pages/sign-in.vue';
 
 export default [
   {
@@ -25,9 +24,5 @@ export default [
   {
     path: '/generate-qr',
     component: GenerateQR
-  },
-  {
-    path: '/sign-in',
-    component: SignIn
   }
 ];

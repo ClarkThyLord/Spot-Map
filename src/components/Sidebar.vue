@@ -33,9 +33,9 @@
         <f7-link
           v-if="!business"
           style="margin-bottom: 5px;"
-          href="/sign-in/"
+          href=""
+          login-screen-open=".business-login"
           panel-close
-          @click="sign_in"
         >Business? Sign-in here</f7-link>
         <br v-if="!business" />
         <f7-link href="https://github.com/ClarkThyLord/Spot-Map#about" external target="_blank">
@@ -56,13 +56,10 @@
 export default {
   data: function () {
     return {
-      business: true,
+      business: false,
     };
   },
   methods: {
-    sign_in: function (event) {
-      this.business = true;
-    },
     sign_out: function (event) {
       this.business = false;
     },

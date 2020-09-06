@@ -1,15 +1,18 @@
 <template>
   <f7-page :page-content="false">
-    <div style="display: flex;">
-      <span style="flex: 1;">History</span>
-      <span>Clear History</span>
-    </div>
-    <f7-block-title>History</f7-block-title>
-    <f7-list media-list>
+    <f7-block-title style="display: flex;">
+      <span style="flex: 1;">
+        <h1>History</h1>
+      </span>
+      <f7-link v-if="history.length > 0" href @click="clear_history">
+        <h3>Clear History</h3>
+      </f7-link>
+    </f7-block-title>
+    <f7-list media-list style="height:100%; overflow-y: auto;">
       <f7-list-item
         v-for="location in history"
         v-bind:key="location"
-        link=""
+        link
         @click="open_location"
         :title="location.title"
         :subtitle="location.timestamp"
@@ -36,6 +39,9 @@ export default {
     }
   },
   methods: {
+    clear_history: function () {
+      this.history = [];
+    },
     open_location: function () {
       console.log("opening location...");
     },

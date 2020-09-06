@@ -1,20 +1,17 @@
 <template>
-  <f7-login-screen
-    class="business-login"
-    :opened="loginScreenOpened"
-    @loginscreen:closed="loginScreenOpened = false"
-  >
+  <f7-login-screen class="business-login" :opened="open" @loginscreen:closed="open = false">
     <f7-page login-screen>
       <f7-login-screen-title>
         <img src="~/static/Spot-Map.logo.png" class="logo" />
+        <h3 style="margin-top: 0px;">BUSINESS</h3>
       </f7-login-screen-title>
       <f7-list form>
         <f7-list-input
-          label="Business ID"
-          type="text"
-          placeholder="Business ID"
-          :value="username"
-          @input="username = $event.target.value"
+          label="Email"
+          type="email"
+          placeholder="Email"
+          :value="email"
+          @input="email = $event.target.value"
         ></f7-list-input>
         <f7-list-input
           label="Business Password"
@@ -23,17 +20,24 @@
           :value="password"
           @input="password = $event.target.value"
         ></f7-list-input>
+        <f7-list-input
+          v-if="registering"
+          label="Re-Enter Password"
+          type="password"
+          placeholder="Business Password"
+          :value="confirm_password"
+          @input="confirm_password = $event.target.value"
+        ></f7-list-input>
       </f7-list>
-      <f7-list>
+      <f7-list style="overflow: hidden !important;">
         <div style="display: flex; justify-content: center;">
-          <f7-button @click="signIn">Sign In</f7-button>
+          <f7-button v-if="registering" @click="register">Register</f7-button>
+          <f7-button v-else @click="sign_in">Login</f7-button>
           <f7-button login-screen-close=".business-login">Cancel</f7-button>
         </div>
         <f7-block-footer>
-          
-        <f7-link
-          href=""
-        >Don't have an account? Make one here</f7-link>
+          <f7-link v-if="registering" href @click="registering=false">Have an account?</f7-link>
+          <f7-link v-else href @click="registering=true">Don't have an account?</f7-link>
         </f7-block-footer>
       </f7-list>
     </f7-page>
@@ -44,13 +48,15 @@
 export default {
   data() {
     return {
-      loginScreenOpened: false,
-      username: "",
+      open: false,
+      registering: false,
+      email: "",
       password: "",
+      confirm_password: "",
     };
   },
   methods: {
-    signIn() {
+    sign_in() {
       const self = this;
       const app = self.$f7;
 
@@ -61,6 +67,7 @@ export default {
         }
       );
     },
+    register() {}
   },
 };
 </script>

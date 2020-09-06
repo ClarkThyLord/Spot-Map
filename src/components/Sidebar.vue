@@ -19,7 +19,7 @@
             style="margin-bottom: 5px; float: inline-end;"
             panel-close
             @click="sign_out"
-          >Sign-out</f7-link>
+          >Logout</f7-link>
           <!-- <f7-link style="margin-bottom: 5px; float: inline-end;" href="/sign-in/" panel-close>Sign-in</f7-link> -->
         </f7-block-title>
         <f7-list v-if="business">
@@ -36,7 +36,7 @@
           href=""
           login-screen-open=".business-login"
           panel-close
-        >Business? Sign-in here</f7-link>
+        >Business? Login here</f7-link>
         <br v-if="!business" />
         <f7-link href="https://github.com/ClarkThyLord/Spot-Map#about" external target="_blank">
           <f7-icon f7="info_circle"></f7-icon>

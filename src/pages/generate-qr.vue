@@ -4,7 +4,7 @@
 </template>
 
 <script>
-export default { 
+export default {  
   mounted: function()
   {
 let options = {

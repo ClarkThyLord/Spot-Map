@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "Entry for the COVID-19 Data Challenge",
   "scripts": {
-    "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"
+    "setup": "npm i && cordova prepare && cordova requirements",
+	"ios": "cordova run ios -- -- --live-reload",
+	"android": "cordova run android -- -- --live-reload",
+	"browser": "cordova run browser -- -- --live-reload",
+	"build": "cordova build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -15,6 +19,7 @@
     "cheerio": "^1.0.0-rc.3",
     "chokidar": "^3.1.1",
     "clean-webpack-plugin": "^3.0.0",
+    "cordova-android": "^9.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-qrcodejs": "git+https://github.com/MenelicSoftware/cordova-plugin-qrcodejs.git",
     "cordova-plugin-qrscanner": "^3.0.1",
@@ -62,7 +67,8 @@
       "cordova-plugin-qrscanner": {}
     },
     "platforms": [
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }

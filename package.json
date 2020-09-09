@@ -4,10 +4,10 @@
   "description": "Entry for the COVID-19 Data Challenge",
   "scripts": {
     "setup": "npm i && cordova prepare && cordova requirements",
-	"ios": "cordova run ios -- -- --live-reload",
-	"android": "cordova run android -- -- --live-reload",
-	"browser": "cordova run browser -- -- --live-reload",
-	"build": "cordova build"
+    "ios": "cordova run ios -- -- --live-reload",
+    "android": "cordova run android -- -- --live-reload",
+    "browser": "cordova run browser -- -- --live-reload",
+    "build": "cordova build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -21,7 +21,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "cordova-android": "^9.0.0",
     "cordova-browser": "^6.0.0",
-    "cordova-plugin-qrcodejs": "git+https://github.com/MenelicSoftware/cordova-plugin-qrcodejs.git",
+    "cordova-plugin-qrcodejs": "^1.0.0",
     "cordova-plugin-qrscanner": "^3.0.1",
     "cordova-plugin-whitelist": "^1.3.4",
     "css-loader": "^3.2.0",

@@ -75,6 +75,7 @@ module.exports = function (ctx) {
         cleanWww () {
             let wwwDir = path.resolve(__dirname, '../www/')
             sys.deleteFolderRecursive(wwwDir, true)
+            fs.closeSync(fs.openSync(path.resolve(wwwFolder, '.gitkeep'), 'w'))
         },
 
         checkManifestFile () {

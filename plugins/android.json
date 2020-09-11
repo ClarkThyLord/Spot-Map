@@ -7,13 +7,13 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "xyz.spot.map"
-    },
     "cordova-plugin-qrcodejs": {
       "PACKAGE_NAME": "xyz.spot.map"
     },
     "cordova-plugin-qrscanner": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "xyz.spot.map"
     }
   },

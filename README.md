@@ -21,16 +21,23 @@
 ---
 
 # About
+The unfortunate truth that we as a society have to come to terms with, is that during the return to the new normality, there will be several people who underestimate the effect and reach of the virus. Due to this problem we offer a simple yet effective solution, Spot-Map.
+
+Spot-Map is a lightweight progressive web application designed to ensure safe traffic around small businesses during the COVID-19 pandemic. While this crisis has taken its toll on local restaurants and shops by restricting customer capacity, the need for a community supported data map to plan secure travels is stronger than ever. Through user created “pings”, a spot map of the location's activities is generated, allowing users to make well-informed decisions of when and where to travel.
+
+Spot-Map, providing you and your family with the information needed to make the right choice.
+
 ## [COVID-19 Data Challenge: Navigating Life and Work in Border Communities](https://mexico.ucsd.edu/initiatives/border-solutions/data-challenge.html)
 Communities along the U.S.-Mexico border have been hard hit by COVID-19. While researchers race to develop a vaccine, life and work must continue. How can we confidently and transparently decide what is safe? Can we more efficiently mine existing data and/or gather new data for analysis to assess the risks of activities in different spheres of life, and thus more effectively direct resources and interventions? Specifically, how can we better understand risk levels in real-time for different situations and communicate them to the public?
 
 ## Usage
-| Command       | Description                                             |
-| ------------- |:-------------------------------------------------------:|
-| cordova build ios/android/browser    | Build for production             |
-| cordova run ios -- -- --lr           | Run for ios with live reload     |
-| cordova run android -- -- --lr       | Run for android with live reload |
-| cordova run browser -- -- --lr       | Run for browser with live reload |
+| Command | Description |
+| ------- |:-----------:|
+| npm run setup | Setup packages, and lists platform requirements |
+| npm run ios | Run IOS with live reload |
+| npm run android | Run Android with live reload |
+| npm run browser | Run Browser with live reload |
+| cordova build ios / android / browser | Build the production application |
 
 
 ---

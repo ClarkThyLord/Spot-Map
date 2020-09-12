@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-qrcodejs": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    },
+    "cordova-plugin-qrscanner": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -1,0 +1,73 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"QRScanner\"><param name=\"browser-package\" value=\"QRScanner\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-qrcodejs": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    },
+    "cordova-plugin-qrscanner": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "xyz.spot.map"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/cordova-plugin-qrcodejs/www/qrcodejsPlugin.js",
+      "id": "cordova-plugin-qrcodejs.QRCodeJS",
+      "pluginId": "cordova-plugin-qrcodejs",
+      "clobbers": [
+        "cordova.plugins.qrcodejs"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-qrcodejs/www/qrcode.js",
+      "id": "cordova-plugin-qrcodejs.QRCcodeJSImpl",
+      "pluginId": "cordova-plugin-qrcodejs",
+      "runs": true
+    },
+    {
+      "file": "plugins/cordova-plugin-qrcodejs/www/qrcodejsPluginProxy.js",
+      "id": "cordova-plugin-qrcodejs.QRCcodeJSProxy",
+      "pluginId": "cordova-plugin-qrcodejs",
+      "runs": true
+    },
+    {
+      "file": "plugins/cordova-plugin-qrscanner/www/www.min.js",
+      "id": "cordova-plugin-qrscanner.QRScanner",
+      "pluginId": "cordova-plugin-qrscanner",
+      "clobbers": [
+        "QRScanner"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-qrscanner/src/browser/plugin.min.js",
+      "id": "cordova-plugin-qrscanner.QRScannerProxy",
+      "pluginId": "cordova-plugin-qrscanner",
+      "runs": true
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-qrcodejs": "1.0.0",
+    "cordova-plugin-qrscanner": "3.0.1",
+    "cordova-plugin-whitelist": "1.3.4"
+  }
+}

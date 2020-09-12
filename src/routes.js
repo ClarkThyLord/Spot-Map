@@ -1,7 +1,7 @@
 import Map from './pages/map.vue';
-import History from './pages/history.vue';
-import AlertClient from './pages/alert.client.vue';
-import AlertBusiness from './pages/alert.business.vue';
+import History from './pages/history-client.vue';
+import AlertClient from './pages/alert-client.vue';
+import AlertBusiness from './pages/alert-business.vue';
 import GenerateQR from './pages/generate-qr.vue';
 
 export default [
@@ -10,7 +10,7 @@ export default [
     component: Map
   },
   {
-    path: '/history',
+    path: '/history-client',
     component: History
   },
   {

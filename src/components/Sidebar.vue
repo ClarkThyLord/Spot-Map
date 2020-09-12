@@ -7,20 +7,19 @@
 
       <f7-list class="sidebar-items">
         <f7-list-item title="Map" link="/" panel-close></f7-list-item>
-        <!-- <f7-block-title>Personal</f7-block-title> -->
         <f7-list>
-          <f7-list-item title="History" link="/history/" panel-close></f7-list-item>
+          <f7-list-item title="History" link="/history-client/" panel-close></f7-list-item>
           <f7-list-item title="Metrics" link="/metrics-client/" panel-close></f7-list-item>
           <f7-list-item title="Alert COVID" link="/alert-business/" panel-close></f7-list-item>
         </f7-list>
         <f7-block-title v-if="business">
           Business
           <f7-link
-            style="margin-bottom: 5px; float: inline-end;"
+            style="margin-bottom: 5px;"
+            class="float-right"
             panel-close
             @click="sign_out"
           >Logout</f7-link>
-          <!-- <f7-link style="margin-bottom: 5px; float: inline-end;" href="/sign-in/" panel-close>Sign-in</f7-link> -->
         </f7-block-title>
         <f7-list v-if="business">
           <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
@@ -29,10 +28,9 @@
         </f7-list>
       </f7-list>
 
-      <div class="sidebar-info">
+      <div class="margin text-align-center justify-content-center">
         <f7-link
           v-if="!business"
-          style="margin-bottom: 5px;"
           href=""
           login-screen-open=".business-login"
           panel-close
@@ -88,10 +86,5 @@ export default {
 .sidebar-items {
   flex: 1;
   margin-top: 0;
-}
-
-.sidebar-info {
-  margin: 15px;
-  text-align: center;
 }
 </style>

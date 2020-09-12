@@ -31,18 +31,33 @@
       <div class="margin text-align-center justify-content-center">
         <f7-link
           v-if="!business"
-          href=""
+          href
           login-screen-open=".business-login"
           panel-close
         >Business? Login here</f7-link>
         <br v-if="!business" />
-        <f7-link href="https://github.com/ClarkThyLord/Spot-Map#about" external target="_blank">
+        <f7-link
+          href="https://github.com/ClarkThyLord/Spot-Map#about"
+          external
+          target="_blank"
+          panel-close
+        >
           <f7-icon f7="info_circle"></f7-icon>
         </f7-link>
-        <f7-link href="https://github.com/ClarkThyLord/Spot-Map/issues" external target="_blank">
+        <f7-link
+          href="https://github.com/ClarkThyLord/Spot-Map/issues"
+          external
+          target="_blank"
+          panel-close
+        >
           <f7-icon f7="question_circle"></f7-icon>
         </f7-link>
-        <f7-link href="https://github.com/ClarkThyLord/Spot-Map" external target="_blank">
+        <f7-link
+          href="https://github.com/ClarkThyLord/Spot-Map"
+          external
+          target="_blank"
+          panel-close
+        >
           <f7-icon f7="logo_github"></f7-icon>
         </f7-link>
       </div>
@@ -85,6 +100,6 @@ export default {
 
 .sidebar-items {
   flex: 1;
-  margin-top: 0;
+  margin-top: 0px;
 }
 </style>

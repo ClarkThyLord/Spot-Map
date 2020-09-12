@@ -2,7 +2,7 @@
   <f7-page
     infinite
     :infinite-distance="50"
-    :infinite-preloader="ShowPreloader"
+    :infinite-preloader="history.length > 0 && ShowPreloader"
     @infinite="load_history"
     :no-navbar="true"
     :no-toolbar="true"
@@ -15,7 +15,7 @@
         <h3>Clear History</h3>
       </f7-link>
     </f7-block-title>
-    <f7-list media-list>
+    <f7-list v-if="history.length > 0" media-list>
       <f7-list-item
         v-for="(location, index) in history"
         link
@@ -26,6 +26,10 @@
         :key="index"
       ></f7-list-item>
     </f7-list>
+    <div v-else style="color: gray; opacity: 0.6; margin: auto;" class="text-align-center justify-content-center align-content-center">
+      <f7-icon f7="tray" size="256px" class="align-self-center" color="gray"></f7-icon>
+      <h1>No History To Show</h1>
+    </div>
   </f7-page>
 </template>
 

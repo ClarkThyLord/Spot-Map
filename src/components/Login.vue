@@ -69,39 +69,27 @@ export default {
   },
   methods: {
     clear() {
-      const self = this;
-      const app = self.$f7;
-
-      self.registering = false;
-      self.email = "";
-      self.password = "";
-      self.confirm_password = "";
-      self.adress = "";
+      this.registering = false;
+      this.email = "";
+      this.password = "";
+      this.confirm_password = "";
+      this.adress = "";
     },
     sign_in() {
-      const self = this;
-      const app = self.$f7;
+      window.login(0, this.email, "business");
 
-      window.login(0, self.email, "business");
-
-      app.loginScreen.close();
-      self.clear();
+      this.$f7.loginScreen.close();
+      this.clear();
     },
     register() {
-      const self = this;
-      const app = self.$f7;
-
       // TODO Register account in server
 
-      app.loginScreen.close();
-      self.clear();
+      this.$f7.loginScreen.close();
+      this.clear();
     },
     cancel() {
-      const self = this;
-      const app = self.$f7;
-
-      app.loginScreen.close();
-      self.clear();
+      this.$f7.loginScreen.close();
+      this.clear();
     },
   },
 };

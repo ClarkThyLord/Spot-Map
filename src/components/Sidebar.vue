@@ -27,7 +27,7 @@
         <f7-list-item v-if="user.type != 'business'" title="History" link="/history/" panel-close></f7-list-item>
 
         <f7-list>
-          <f7-list-item title="Report COVID" link="/report/" panel-close></f7-list-item>
+          <f7-list-item title="Report COVID-19" link="/report/" panel-close></f7-list-item>
         </f7-list>
       </f7-list>
 

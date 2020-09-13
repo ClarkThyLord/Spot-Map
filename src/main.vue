@@ -16,13 +16,10 @@ import routes from "./routes.js";
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
 import Login from "./components/Login.vue";
-
-let theme = "auto";
-if (document.location.search.indexOf("theme=") >= 0) {
-  theme = document.location.search.split("theme=")[1].split("&")[0];
-}
-
-window.business = false;
+window.login_info = {
+  logged_in: false,
+  user_name: "",
+};
 
 export default {
   components: {
@@ -32,14 +29,15 @@ export default {
     f7Statusbar,
     Navbar,
     Sidebar,
-    Login
+    Login,
   },
   data() {
     return {
       f7params: {
-        theme,
+        id: "xyz.spot.map",
+        name: "Spot-Map",
+        version: "0.0.0",
         routes,
-        id: "io.framework7.testapp",
       },
     };
   },

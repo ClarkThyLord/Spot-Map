@@ -12,14 +12,19 @@
     ></f7-searchbar>
     <f7-nav-right>
       <f7-link>
-        <f7-icon f7="qrcode"></f7-icon>
+        <f7-icon :f7="login_info.logged_in ? 'qrcode' : 'qrcode_viewfinder'"></f7-icon>
       </f7-link>
     </f7-nav-right>
   </f7-navbar>
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {
+      login_info: window.login_info
+    };
+  },};
 </script>
 
 <style>

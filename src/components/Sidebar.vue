@@ -7,12 +7,12 @@
 
       <f7-list class="sidebar-items">
         <f7-list-item title="Map" link="/" panel-close></f7-list-item>
-        <f7-list>
+        <f7-list v-if="!login_info.logged_in">
           <f7-list-item title="History" link="/history-client/" panel-close></f7-list-item>
           <f7-list-item title="Metrics" link="/metrics-client/" panel-close></f7-list-item>
           <f7-list-item title="Alert COVID" link="/alert-business/" panel-close></f7-list-item>
         </f7-list>
-        <f7-block-title v-if="business">
+        <f7-block-title v-if="login_info.logged_in">
           Business
           <f7-link
             style="margin-bottom: 5px;"
@@ -21,21 +21,21 @@
             @click="sign_out"
           >Logout</f7-link>
         </f7-block-title>
-        <f7-list v-if="business">
+        <f7-list v-if="login_info.logged_in">
+          <f7-list-item title="Metrics" link="/metrics-business/" panel-close></f7-list-item>
           <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
           <f7-list-item title="Report COVID" link="/alert-client/" panel-close></f7-list-item>
-          <f7-list-item title="Business Metrics" link="/metrics-business/" panel-close></f7-list-item>
         </f7-list>
       </f7-list>
 
       <div class="margin text-align-center justify-content-center">
         <f7-link
-          v-if="!business"
+          v-if="!login_info.logged_in"
           href
           login-screen-open=".business-login"
           panel-close
         >Business? Login here</f7-link>
-        <br v-if="!business" />
+        <br v-if="!login_info.logged_in" />
         <f7-link
           href="https://github.com/ClarkThyLord/Spot-Map#about"
           external
@@ -69,12 +69,12 @@
 export default {
   data: function () {
     return {
-      business: true,
+      login_info: window.login_info
     };
   },
   methods: {
     sign_out: function (event) {
-      this.business = false;
+      this.login_info.logged_in = false
     },
   },
 };

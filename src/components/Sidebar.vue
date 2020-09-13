@@ -6,38 +6,36 @@
       </div>
 
       <f7-list class="sidebar-items">
+        <div v-if="user.type == 'business'">
+          <f7-block-title>
+            {{ user.name }}
+            <f7-link
+              style="margin-bottom: 5px;"
+              class="float-right"
+              panel-close
+              @click="logout"
+            >Logout</f7-link>
+          </f7-block-title>
+
+          <f7-list>
+            <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
+          </f7-list>
+        </div>
+
         <f7-list-item title="Map" link="/" panel-close></f7-list-item>
-        <f7-list v-if="!login_info.logged_in">
-          <f7-list-item title="History" link="/history-client/" panel-close></f7-list-item>
-          <f7-list-item title="Metrics" link="/metrics-client/" panel-close></f7-list-item>
-        </f7-list>
-        <f7-block-title v-if="login_info.logged_in">
-          Business
-          <f7-link
-            style="margin-bottom: 5px;"
-            class="float-right"
-            panel-close
-            @click="sign_out"
-          >Logout</f7-link>
-        </f7-block-title>
-        <f7-list v-if="login_info.logged_in">
-          <f7-list-item title="Metrics" link="/metrics-business/" panel-close></f7-list-item>
-          <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
-          <f7-list-item title="Report COVID" link="/alert-client/" panel-close></f7-list-item>
-        </f7-list>
+        <f7-list-item title="Metrics" link="/metrics/" panel-close></f7-list-item>
+        <f7-list-item v-if="user.type != 'business'" title="History" link="/history/" panel-close></f7-list-item>
+
         <f7-list>
           <f7-list-item title="Report COVID" link="/report/" panel-close></f7-list-item>
         </f7-list>
       </f7-list>
 
       <div class="margin text-align-center justify-content-center">
-        <f7-link
-          v-if="!login_info.logged_in"
-          href
-          login-screen-open=".business-login"
-          panel-close
-        >Business? Login here</f7-link>
-        <br v-if="!login_info.logged_in" />
+        <div v-if="user.type != 'business'">
+          <f7-link href login-screen-open=".business-login" panel-close>Business? Login here</f7-link>
+          <br />
+        </div>
         <f7-link
           href="https://github.com/ClarkThyLord/Spot-Map#about"
           external
@@ -71,12 +69,12 @@
 export default {
   data: function () {
     return {
-      login_info: window.login_info,
+      user: window.user,
     };
   },
   methods: {
-    sign_out: function (event) {
-      this.login_info.logged_in = false;
+    logout() {
+      window.logout();
     },
   },
 };

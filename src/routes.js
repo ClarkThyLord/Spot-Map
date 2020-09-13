@@ -1,9 +1,8 @@
 import Map from './pages/map.vue';
+import Metrics from './pages/metrics.vue';
 
-import History from './pages/history-client.vue';
-import MetricsClient from './pages/metrics-client.vue';
+import History from './pages/history.vue';
 
-import MetricsBusiness from './pages/metrics-business.vue';
 import GenerateQR from './pages/generate-qr.vue';
 
 import Report from './pages/report.vue';
@@ -14,16 +13,12 @@ export default [
     component: Map
   },
   {
-    path: '/history-client',
+    path: '/metrics',
+    component: Metrics
+  },
+  {
+    path: '/history',
     component: History
-  },
-  {
-    path: '/metrics-client',
-    component: MetricsClient
-  },
-  {
-    path: '/metrics-business',
-    component: MetricsBusiness
   },
   {
     path: '/generate-qr',

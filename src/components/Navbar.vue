@@ -12,7 +12,7 @@
     ></f7-searchbar>
     <f7-nav-right>
       <f7-link @click="pressed_qr">
-        <f7-icon :f7="login_info.logged_in ? 'qrcode' : 'qrcode_viewfinder'"></f7-icon>
+        <f7-icon :f7="user.type == 'business' ? 'qrcode_viewfinder' : 'qrcode'"></f7-icon>
       </f7-link>
     </f7-nav-right>
   </f7-navbar>
@@ -22,12 +22,12 @@
 export default {
   data: function () {
     return {
-      login_info: window.login_info,
+      user: window.user
     };
   },
   methods: {
     pressed_qr: function () {
-      if (this.login_info.logged_in) {
+      if (this.user.type == 'business') {
         this.$f7.views.main.router.navigate("/generate-qr/");
       } else {
         // TODO Start scanning for QR

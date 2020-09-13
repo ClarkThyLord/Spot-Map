@@ -16,9 +16,20 @@ import routes from "./routes.js";
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
 import Login from "./components/Login.vue";
-window.login_info = {
-  logged_in: false,
-  user_name: "",
+window.user = {
+  id: "",
+  name: "",
+  type: "anonymous",
+};
+window.login = function (id, name, type) {
+  window.user.id = id;
+  window.user.name = name;
+  window.user.type = type;
+};
+window.logout = function () {
+  window.user.id = "";
+  window.user.name = "";
+  window.user.type = "anonymous";
 };
 
 export default {

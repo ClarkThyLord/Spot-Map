@@ -10,7 +10,6 @@
         <f7-list v-if="!login_info.logged_in">
           <f7-list-item title="History" link="/history-client/" panel-close></f7-list-item>
           <f7-list-item title="Metrics" link="/metrics-client/" panel-close></f7-list-item>
-          <f7-list-item title="Alert COVID" link="/alert-business/" panel-close></f7-list-item>
         </f7-list>
         <f7-block-title v-if="login_info.logged_in">
           Business
@@ -25,6 +24,9 @@
           <f7-list-item title="Metrics" link="/metrics-business/" panel-close></f7-list-item>
           <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
           <f7-list-item title="Report COVID" link="/alert-client/" panel-close></f7-list-item>
+        </f7-list>
+        <f7-list>
+          <f7-list-item title="Report COVID" link="/report/" panel-close></f7-list-item>
         </f7-list>
       </f7-list>
 
@@ -69,12 +71,12 @@
 export default {
   data: function () {
     return {
-      login_info: window.login_info
+      login_info: window.login_info,
     };
   },
   methods: {
     sign_out: function (event) {
-      this.login_info.logged_in = false
+      this.login_info.logged_in = false;
     },
   },
 };

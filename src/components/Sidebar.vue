@@ -6,45 +6,58 @@
       </div>
 
       <f7-list class="sidebar-items">
+        <div v-if="user.type == 'business'">
+          <f7-block-title>
+            {{ user.name }}
+            <f7-link
+              style="margin-bottom: 5px;"
+              class="float-right"
+              panel-close
+              @click="logout"
+            >Logout</f7-link>
+          </f7-block-title>
+
+          <f7-list>
+            <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
+          </f7-list>
+        </div>
+
         <f7-list-item title="Map" link="/" panel-close></f7-list-item>
-        <!-- <f7-block-title>Personal</f7-block-title> -->
+        <f7-list-item title="Metrics" link="/metrics/" panel-close></f7-list-item>
+        <f7-list-item v-if="user.type != 'business'" title="History" link="/history/" panel-close></f7-list-item>
+
         <f7-list>
-          <f7-list-item title="History" link="/history/" panel-close></f7-list-item>
-          <f7-list-item title="Metrics" link="/metrics-client/" panel-close></f7-list-item>
-          <f7-list-item title="Alert COVID" link="/alert-business/" panel-close></f7-list-item>
-        </f7-list>
-        <f7-block-title v-if="business">
-          Business
-          <f7-link
-            style="margin-bottom: 5px; float: inline-end;"
-            panel-close
-            @click="sign_out"
-          >Logout</f7-link>
-          <!-- <f7-link style="margin-bottom: 5px; float: inline-end;" href="/sign-in/" panel-close>Sign-in</f7-link> -->
-        </f7-block-title>
-        <f7-list v-if="business">
-          <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
-          <f7-list-item title="Report COVID" link="/alert-client/" panel-close></f7-list-item>
-          <f7-list-item title="Business Metrics" link="/metrics-business/" panel-close></f7-list-item>
+          <f7-list-item title="Report COVID-19" link="/report/" panel-close></f7-list-item>
         </f7-list>
       </f7-list>
 
-      <div class="sidebar-info">
+      <div class="margin text-align-center justify-content-center">
+        <div v-if="user.type != 'business'">
+          <f7-link href login-screen-open=".business-login" panel-close>Business? Login here</f7-link>
+          <br />
+        </div>
         <f7-link
-          v-if="!business"
-          style="margin-bottom: 5px;"
-          href=""
-          login-screen-open=".business-login"
+          href="https://github.com/ClarkThyLord/Spot-Map#about"
+          external
+          target="_blank"
           panel-close
-        >Business? Login here</f7-link>
-        <br v-if="!business" />
-        <f7-link href="https://github.com/ClarkThyLord/Spot-Map#about" external target="_blank">
+        >
           <f7-icon f7="info_circle"></f7-icon>
         </f7-link>
-        <f7-link href="https://github.com/ClarkThyLord/Spot-Map/issues" external target="_blank">
+        <f7-link
+          href="https://github.com/ClarkThyLord/Spot-Map/issues"
+          external
+          target="_blank"
+          panel-close
+        >
           <f7-icon f7="question_circle"></f7-icon>
         </f7-link>
-        <f7-link href="https://github.com/ClarkThyLord/Spot-Map" external target="_blank">
+        <f7-link
+          href="https://github.com/ClarkThyLord/Spot-Map"
+          external
+          target="_blank"
+          panel-close
+        >
           <f7-icon f7="logo_github"></f7-icon>
         </f7-link>
       </div>
@@ -56,12 +69,12 @@
 export default {
   data: function () {
     return {
-      business: true,
+      user: window.user,
     };
   },
   methods: {
-    sign_out: function (event) {
-      this.business = false;
+    logout() {
+      window.logout();
     },
   },
 };
@@ -87,11 +100,6 @@ export default {
 
 .sidebar-items {
   flex: 1;
-  margin-top: 0;
-}
-
-.sidebar-info {
-  margin: 15px;
-  text-align: center;
+  margin-top: 0px;
 }
 </style>

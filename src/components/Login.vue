@@ -5,6 +5,7 @@
         <img src="~/static/Spot-Map.logo.png" class="logo" />
         <h3 style="margin-top: 0px;">BUSINESS</h3>
       </f7-login-screen-title>
+
       <f7-list form>
         <f7-list-input
           label="Email"
@@ -20,21 +21,31 @@
           :value="password"
           @input="password = $event.target.value"
         ></f7-list-input>
-        <f7-list-input
-          v-if="registering"
-          label="Re-Enter Password"
-          type="password"
-          placeholder="Business Password"
-          :value="confirm_password"
-          @input="confirm_password = $event.target.value"
-        ></f7-list-input>
+
+        <f7-list v-if="registering" style="margin-top: 0px;">
+          <f7-list-input
+            label="Re-Enter Password"
+            type="password"
+            placeholder="Business Password"
+            :value="confirm_password"
+            @input="confirm_password = $event.target.value"
+          ></f7-list-input>
+          <f7-list-input
+            label="Adress"
+            placeholder="Adress"
+            :value="adress"
+            @input="adress = $event.target.value"
+          ></f7-list-input>
+        </f7-list>
       </f7-list>
+
       <f7-list style="overflow: hidden !important;">
         <div style="display: flex; justify-content: center;">
           <f7-button v-if="registering" @click="register">Register</f7-button>
           <f7-button v-else @click="sign_in">Login</f7-button>
-          <f7-button login-screen-close=".business-login">Cancel</f7-button>
+          <f7-button @click="cancel">Cancel</f7-button>
         </div>
+
         <f7-block-footer>
           <f7-link v-if="registering" href @click="registering=false">Have an account?</f7-link>
           <f7-link v-else href @click="registering=true">Don't have an account?</f7-link>
@@ -53,21 +64,33 @@ export default {
       email: "",
       password: "",
       confirm_password: "",
+      adress: "",
     };
   },
   methods: {
-    sign_in() {
-      const self = this;
-      const app = self.$f7;
-
-      app.dialog.alert(
-        `Username: ${self.username}<br>Password: ${self.password}`,
-        () => {
-          app.loginScreen.close();
-        }
-      );
+    clear() {
+      this.registering = false;
+      this.email = "";
+      this.password = "";
+      this.confirm_password = "";
+      this.adress = "";
     },
-    register() {}
+    sign_in() {
+      window.login(0, this.email, "business");
+
+      this.$f7.loginScreen.close();
+      this.clear();
+    },
+    register() {
+      // TODO Register account in server
+
+      this.$f7.loginScreen.close();
+      this.clear();
+    },
+    cancel() {
+      this.$f7.loginScreen.close();
+      this.clear();
+    },
   },
 };
 </script>

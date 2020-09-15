@@ -12,7 +12,7 @@
     ></f7-searchbar>
     <f7-nav-right>
       <f7-link @click="pressed_qr">
-        <f7-icon :f7="user.type == 'business' ? 'qrcode_viewfinder' : 'qrcode'"></f7-icon>
+        <f7-icon :f7="user.type == 'business' ? 'qrcode' : 'qrcode_viewfinder'"></f7-icon>
       </f7-link>
     </f7-nav-right>
   </f7-navbar>

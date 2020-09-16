@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page style="justify-center: center;">
     <img v-bind:src="QR" alt="Something went wrong" />
   </f7-page>
 </template>

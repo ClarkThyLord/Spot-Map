@@ -31,10 +31,10 @@
             @input="confirm_password = $event.target.value"
           ></f7-list-input>
           <f7-list-input
-            label="Adress"
-            placeholder="Adress"
-            :value="adress"
-            @input="adress = $event.target.value"
+            label="Address"
+            placeholder="Address"
+            :value="address"
+            @input="address = $event.target.value"
           ></f7-list-input>
         </f7-list>
       </f7-list>
@@ -64,7 +64,7 @@ export default {
       email: "",
       password: "",
       confirm_password: "",
-      adress: "",
+      address: "",
     };
   },
   methods: {
@@ -73,7 +73,7 @@ export default {
       this.email = "";
       this.password = "";
       this.confirm_password = "";
-      this.adress = "";
+      this.address = "";
     },
     sign_in() {
       window.login(0, this.email, "business");

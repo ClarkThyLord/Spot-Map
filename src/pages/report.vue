@@ -7,7 +7,7 @@
     </f7-block-title>
 
     <f7-list no-hairlines-md style="max-width: 480px;">
-      <f7-list-input v-if="user.type == 'business' || true" label="Number Of Cases">
+      <f7-list-input v-if="user.type == 'business'" label="Number Of Cases">
         <f7-range slot="input" :min="1" :max="100" :step="1" :value="cases" :label="true"></f7-range>
       </f7-list-input>
 

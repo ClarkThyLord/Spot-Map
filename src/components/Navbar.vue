@@ -6,6 +6,7 @@
       </f7-link>
     </f7-nav-left>
     <f7-searchbar
+      @input="searching"
       search-container=".search-list"
       search-in=".item-title"
       :disable-button="!$theme.aurora"
@@ -22,10 +23,15 @@
 export default {
   data: function () {
     return {
+      search: "",
       user: window.user
     };
   },
   methods: {
+    searching: function(event) {
+      this.search = event.target.value;
+      // TODO recommend searches
+    },
     pressed_qr: function () {
       if (this.user.type == 'business') {
         this.$f7.views.main.router.navigate("/generate-qr/");

@@ -39,7 +39,7 @@ body {
   padding: 0;
 }
 
-.Map {
+#Map {
   width: 100vw;
   height: 100vh;
 }

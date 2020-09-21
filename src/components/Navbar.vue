@@ -38,35 +38,23 @@ export default {
         this.$f7.views.main.router.navigate("/generate-qr/");
       } else {
         // TODO Start scanning for QR 
-        QRScanner.scan(displayContents);
-        QRScanner.show(); 
+        //window.cordova.plugins.barcodeScanner.scan()
+        //window.cordova.plugins.BBScanner.scan({format: cordova.plugins.BBScanner.types.QR_CODE}, displayContents);
+        QRScanner.scan(displayContents);  
       }
     },
   },
 };
-function onDone(err, status){
-  if (err) {
-   // here we can handle errors and clean up any loose ends.
-   console.error(err);
-  }
-  if (status.authorized) {
-    //No Auth
-  } else if (status.denied) {
-   // `QRScanner.openSettings()` or they wont scan
-  } else {
-    //Ask again soon
-  }
-}
-
 function displayContents(err, text){
   if(err){
     // an error occurred, or the scan was canceled (error code `6`)
-    console.log(err);
+    QRScanner.hide();
+    window.location.href = "/";
   } else {
     // The scan completed, display the contents of the QR code:
-    console.log(text);
-    
-    QRScanner.destroy();
+    alert(text);
+    QRScanner.hide();
+    window.location.href = "/";
   }
 }
 </script>

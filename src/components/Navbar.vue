@@ -38,24 +38,22 @@ export default {
         this.$f7.views.main.router.navigate("/generate-qr/");
       } else {
         // TODO Start scanning for QR 
-        //window.cordova.plugins.barcodeScanner.scan()
-        //window.cordova.plugins.BBScanner.scan({format: cordova.plugins.BBScanner.types.QR_CODE}, displayContents);
-        QRScanner.scan(displayContents);  
+        //window.location.href = "/";
+        navigator.camera.getPicture(ScanSuccess, ScanFailure)
       }
     },
   },
 };
-function displayContents(err, text){
-  if(err){
-    // an error occurred, or the scan was canceled (error code `6`)
-    QRScanner.hide();
-    window.location.href = "/";
-  } else {
-    // The scan completed, display the contents of the QR code:
-    alert(text);
-    QRScanner.hide();
-    window.location.href = "/";
-  }
+function ScanFailure(message)
+{
+  console.log('Camera did not scan because pf: ' + message);
+}
+
+function ScanSuccess(imageData)
+{
+  console.log("Camera scanned succesfuly..");
+  var image = document.getElementById('myImage');
+  image.src = "data:image/jpeg;base64," + imageData;
 }
 </script>
 

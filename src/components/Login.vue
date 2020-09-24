@@ -76,19 +76,19 @@ export default {
       this.address = "";
     },
     sign_in() {
-      window.login(0, this.email, "business");
+      window.Session.business_login(this.email, this.password);
 
-      this.$f7.loginScreen.close();
+      this.close();
       this.clear();
     },
     register() {
       // TODO Register account in server
 
-      this.$f7.loginScreen.close();
+      this.close();
       this.clear();
     },
     cancel() {
-      this.$f7.loginScreen.close();
+      this.close();
       this.clear();
     },
   },

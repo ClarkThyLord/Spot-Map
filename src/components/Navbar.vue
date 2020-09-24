@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import mainVue from '../main.vue';
+import QrScanner from 'qr-scanner';
+ import mainVue from '../main.vue';
 export default {
   data: function () {
     return {
@@ -39,11 +40,12 @@ export default {
       } else {
         // TODO Start scanning for QR 
         //window.location.href = "/";
-        navigator.camera.getPicture(ScanSuccess, ScanFailure)
+        navigator.camera.getPicture(ScanSuccess, ScanFailure);
       }
     },
   },
 };
+
 function ScanFailure(message)
 {
   console.log('Camera did not scan because pf: ' + message);
@@ -51,9 +53,13 @@ function ScanFailure(message)
 
 function ScanSuccess(imageData)
 {
+  console.log(imageData);
   console.log("Camera scanned succesfuly..");
-  var image = document.getElementById('myImage');
-  image.src = "data:image/jpeg;base64," + imageData;
+  //image = document.getElementById('myImage');
+  //image.src = "data:image/jpeg;base64," + imageData; 
+   QrScanner.scanImage(imageData)
+   .then(result => console.log(result))
+   .catch(error => console.log(error || 'no QR code found.'));
 }
 </script>
 

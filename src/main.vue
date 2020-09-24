@@ -12,10 +12,11 @@
 // Import Routes...
 import { f7App, f7Panel, f7View, f7Statusbar } from "framework7-vue";
 import routes from "./routes.js";
-
+import QrScanner from 'qr-scanner';
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
 import Login from "./components/Login.vue";
+window.QrScanner = QrScanner;
 window.user = {
   id: "",
   name: "",

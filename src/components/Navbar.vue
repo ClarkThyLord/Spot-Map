@@ -15,7 +15,9 @@
 
     <f7-nav-right v-if="qr_scan || session.logged_in">
       <f7-link @click="qr_pressed">
-        <f7-icon :f7="session.logged_in ? 'qrcode' : 'qrcode_viewfinder'"></f7-icon>
+        <f7-icon
+          :f7="session.logged_in ? 'qrcode' : 'qrcode_viewfinder'"
+        ></f7-icon>
       </f7-link>
     </f7-nav-right>
   </f7-navbar>

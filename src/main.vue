@@ -3,7 +3,9 @@
   <f7-app :params="f7params">
     <navbar />
     <sidebar />
+
     <login />
+    <settings />
 
     <f7-view url="/" :main="true" class="ios-edges"></f7-view>
   </f7-app>
@@ -17,7 +19,9 @@ window.QrScanner = QrScanner;
 
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
+
 import Login from "./components/Login.vue";
+import Settings from "./components/Settings.vue";
 
 import Session from "./core/session";
 window.Session = Session;
@@ -31,6 +35,7 @@ export default {
     Navbar,
     Sidebar,
     Login,
+    Settings
   },
   data() {
     return {

@@ -29,6 +29,10 @@
         <f7-list>
           <f7-list-item title="Report COVID-19" link="/report/" panel-close></f7-list-item>
         </f7-list>
+
+        <f7-list>
+          <f7-list-item title="Settings" link="#" popup-open=".Settings" panel-close></f7-list-item>
+        </f7-list>
       </f7-list>
 
       <div class="margin text-align-center justify-content-center">

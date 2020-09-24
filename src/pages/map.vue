@@ -1,24 +1,39 @@
 <template>
-  <f7-page :page-content="false">
-    <iframe>
-      <div id="Map"></div>
-    </iframe>
+  <f7-page :no-navbar="true" :no-toolbar="true">
+    <div
+      v-if="error"
+      style="color: gray; opacity: 0.6;"
+      class="text-align-center justify-content-center align-content-center"
+    >
+      <f7-icon color="gray" size="256px" f7="wifi_exclamationmark"></f7-icon>
+      <h1>Oh no, something went wrong!</h1>
+    </div>
+
+    <div v-else class="expand" id="Map">
+      <div class="expand" ref="MapContent"></div>
+    </div>
   </f7-page>
 </template>
 
 <script>
-import gmapsInit from '../assets/js/gmaps';
+import gmapsInit from "../assets/js/gmaps";
 
 export default {
-  name: 'Map',
-  async mounted(){
-    try{
+  name: "Map",
+  data: function () {
+    return {
+      error: false,
+    };
+  },
+  async mounted() {
+    try {
       const google = await gmapsInit();
       const geocoder = new google.maps.Geocoder();
-      const map = new google.maps.Map(this.$el);
+      const map = new google.maps.Map(this.$refs.MapContent);
 
-      geocoder.geocode({address: 'Tijuana'}, (results, status) => {
-        if (status !== 'OK' || !results[0]){
+      geocoder.geocode({ address: "Tijuana" }, (results, status) => {
+        if (status !== "OK" || !results[0]) {
+          this.error = true;
           throw new Error(status);
         }
 
@@ -32,15 +47,13 @@ export default {
 };
 </script>
 
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
+<style scoped>
+.page {
+  max-height: calc(100% - 64px);
 }
 
-#Map {
-  width: 100vw;
-  height: 100vh;
+.expand {
+  width: 100%;
+  height: 100%;
 }
 </style>

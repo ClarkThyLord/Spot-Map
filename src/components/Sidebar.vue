@@ -6,9 +6,9 @@
       </div>
 
       <f7-list class="sidebar-items">
-        <div v-if="user.type == 'business'">
+        <div v-if="session.logged_in">
           <f7-block-title>
-            {{ user.name }}
+            {{ session.business_name }}
             <f7-link
               style="margin-bottom: 5px;"
               class="float-right"
@@ -24,7 +24,7 @@
 
         <f7-list-item title="Map" link="/" panel-close></f7-list-item>
         <f7-list-item title="Metrics" link="/metrics/" panel-close></f7-list-item>
-        <f7-list-item v-if="user.type != 'business'" title="History" link="/history/" panel-close></f7-list-item>
+        <f7-list-item v-if="!session.logged_in" title="History" link="/history/" panel-close></f7-list-item>
 
         <f7-list>
           <f7-list-item title="Report COVID-19" link="/report/" panel-close></f7-list-item>
@@ -32,7 +32,7 @@
       </f7-list>
 
       <div class="margin text-align-center justify-content-center">
-        <div v-if="user.type != 'business'">
+        <div v-if="!session.logged_in">
           <f7-link href login-screen-open=".business-login" panel-close>Business? Login here</f7-link>
           <br />
         </div>
@@ -67,14 +67,14 @@
 
 <script>
 export default {
-  data: function () {
+  data: function() {
     return {
-      user: window.user,
+      session: window.Session
     };
   },
   methods: {
     logout() {
-      window.logout();
+      window.Session.business_logout();
     },
   },
 };

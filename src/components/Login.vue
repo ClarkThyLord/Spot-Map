@@ -68,6 +68,10 @@ export default {
     };
   },
   methods: {
+    close() {
+      this.$f7.loginScreen.close();
+      this.clear();
+    },
     clear() {
       this.registering = false;
       this.email = "";
@@ -79,17 +83,13 @@ export default {
       window.Session.business_login(this.email, this.password);
 
       this.close();
-      this.clear();
     },
     register() {
       // TODO Register account in server
-
       this.close();
-      this.clear();
     },
     cancel() {
       this.close();
-      this.clear();
     },
   },
 };

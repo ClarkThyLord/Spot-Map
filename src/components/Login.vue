@@ -8,16 +8,15 @@
 
       <f7-list form>
         <f7-list-input
-          label="Email"
-          type="email"
-          placeholder="Email"
+          label="Username"
+          placeholder="Username"
           :value="email"
           @input="email = $event.target.value"
         ></f7-list-input>
         <f7-list-input
-          label="Business Password"
+          label="Password"
           type="password"
-          placeholder="Business Password"
+          placeholder="Password"
           :value="password"
           @input="password = $event.target.value"
         ></f7-list-input>
@@ -26,13 +25,13 @@
           <f7-list-input
             label="Re-Enter Password"
             type="password"
-            placeholder="Business Password"
+            placeholder="Password"
             :value="confirm_password"
             @input="confirm_password = $event.target.value"
           ></f7-list-input>
           <f7-list-input
-            label="Address"
-            placeholder="Address"
+            label="Business Address"
+            placeholder="Business Address"
             :value="address"
             @input="address = $event.target.value"
           ></f7-list-input>
@@ -81,7 +80,6 @@ export default {
     },
     sign_in() {
       window.Session.business_login(this.email, this.password);
-
       this.close();
     },
     register() {

@@ -9,9 +9,11 @@
   </f7-app>
 </template>
 <script>
-// Import Routes...
 import { f7App, f7Panel, f7View, f7Statusbar } from "framework7-vue";
 import routes from "./routes.js";
+
+import QrScanner from "qr-scanner";
+window.QrScanner = QrScanner;
 
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";

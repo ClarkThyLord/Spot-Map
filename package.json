@@ -70,7 +70,7 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-camera": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+        "ANDROID_SUPPORT_V4_VERSION": "22.+"
       },
       "cordova-plugin-qrcodejs": {}
     },

@@ -38,7 +38,7 @@ export default {
       // TODO Recommend searches
     },
     qr_pressed: function () {
-      if (window.Session.is_business_logged_in()) {
+      if (this.session.logged_in) {
         this.$f7.views.main.router.navigate("/generate-qr/");
       } else {
         navigator.camera.getPicture(CaptureSuccess, CaptureFailure);

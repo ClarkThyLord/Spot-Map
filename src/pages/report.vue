@@ -2,12 +2,12 @@
   <f7-page style="display: flex; justify-content: center;" :no-navbar="true" :no-toolbar="true">
     <f7-block-title style="display: flex;">
       <span style="flex: 1;">
-        <h1>Report COVID-19</h1>
+        <h1>Report COVID-19 <span v-if="session.logged_in"> At {{ session.business_name }}</span></h1>
       </span>
     </f7-block-title>
 
     <f7-list no-hairlines-md style="max-width: 480px;">
-      <f7-list-input v-if="user.type == 'business'" label="Number Of Cases">
+      <f7-list-input v-if="session.logged_in" label="Number Of Cases">
         <f7-range slot="input" :min="1" :max="100" :step="1" :value="cases" :label="true"></f7-range>
       </f7-list-input>
 
@@ -46,7 +46,7 @@
 
     <div style="display: flex; justify-content: center;">
       <f7-button @click="report">Report</f7-button>
-      <f7-button @click="clear">Cancel</f7-button>
+      <!-- <f7-button @click="clear">Cancel</f7-button> -->
     </div>
   </f7-page>
 </template>
@@ -56,8 +56,8 @@ export default {
   data: function () {
     return {
       cases: 1,
-      start_of_symptoms: "",
-      user: window.user,
+      start_of_cases: "",
+      session: window.Session
     };
   },
   methods: {

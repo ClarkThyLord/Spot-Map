@@ -79,6 +79,7 @@ export default {
   methods: {
     logout() {
       window.Session.business_logout();
+      this.$f7.views.main.router.navigate("/");
     },
   },
 };

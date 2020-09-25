@@ -29,7 +29,11 @@ export default {
     try {
       const google = await gmapsInit();
       const geocoder = new google.maps.Geocoder();
-      const map = new google.maps.Map(this.$refs.MapContent);
+      const map = new google.maps.Map(this.$refs.MapContent, {
+        fullscreenControl: false,
+        mapTypeControl: false,
+        streetViewControl: false
+      });
 
       geocoder.geocode({ address: "Tijuana" }, (results, status) => {
         if (status !== "OK" || !results[0]) {

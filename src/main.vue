@@ -50,3 +50,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.view {
+  z-index: 1;
+}
+</style>

@@ -8,10 +8,8 @@
 
     <f7-searchbar
       v-show="search_visible"
-      @input="searching"
-      search-container=".search-list"
-      search-in=".item-title"
       :disable-button="!$theme.aurora"
+      id="MapSearch"
     ></f7-searchbar>
 
     <f7-nav-right v-if="qr_scan || session.logged_in">
@@ -44,10 +42,6 @@ export default {
   methods: {
     onRouteChange(newRoute, previousRoute) {
       this.search_visible = newRoute.url == "/";
-    },
-    searching: function (event) {
-      this.search = event.target.value;
-      // TODO Recommend searches
     },
     qr_pressed: function () {
       if (this.session.logged_in) {

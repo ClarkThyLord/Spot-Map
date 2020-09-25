@@ -4,10 +4,22 @@ function Session() {
   this.version = "0.0.1";
 
   this.theme = "auto";
+  this.set_theme = function (theme) {
+    this.theme = theme;
+  };
   this.dark_theme = 0;
+  this.set_dark_theme = function (dark_theme) {
+    this.dark_theme = dark_theme;
+  };
   this.language = "english";
+  this.set_language = function (language) {
+    this.language = language;
+  };
 
   this.google_maps_api_key = "";
+  this.set_google_maps_api_key = function (google_maps_api_key) {
+    this.google_maps_api_key = google_maps_api_key;
+  };
 
   this.logged_in = false;
   this.business_name = "";

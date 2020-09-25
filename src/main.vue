@@ -43,6 +43,7 @@ export default {
         id: "xyz.spot.map",
         name: "Spot-Map",
         version: "0.0.0",
+        theme: Session.theme,
         routes,
       },
     };

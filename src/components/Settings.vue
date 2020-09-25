@@ -28,7 +28,7 @@
             type="select"
             label="Theme"
             :value="session.theme"
-            @input="session.set_theme($event.target.value)"
+            @input="set_theme"
             placeholder="Please choose..."
           >
             <option value="auto">Auto</option>
@@ -41,6 +41,7 @@
             <span>Dark Theme</span>
             <f7-toggle
               :value="session.dark_theme"
+              :checked="session.dark_theme == 1 ? true : false"
               @toggle:change="session.set_dark_theme($event ? 1 : 0)"
             ></f7-toggle>
           </f7-list-item>
@@ -50,7 +51,7 @@
             label="Goggle Maps API Key"
             placeholder="Goggle Maps API Key"
             :value="session.google_maps_api_key"
-            @input="session.set_google_maps_api_key($event.target.value)"
+            @input="set_google_maps_api_key"
             clear-button
           >
           </f7-list-input>
@@ -68,6 +69,16 @@ export default {
       session: window.Session,
     };
   },
+  methods: {
+    set_theme: function (event) {
+      this.session.set_theme(event.target.value);
+      window.location.href = '.';
+    },
+    set_google_maps_api_key: function (event) {
+      this.session.set_google_maps_api_key(event.target.value);
+      window.location.href = '.';
+    }
+  }
 };
 </script>
 

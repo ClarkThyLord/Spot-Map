@@ -1,12 +1,16 @@
 <template>
-  <f7-page style="display: flex; justify-content: center;" :no-navbar="true" :no-toolbar="true">
+  <f7-page
+    style="display: flex; justify-content: center"
+    :no-navbar="true"
+    :no-toolbar="true"
+  >
     <f7-block-title class="text-align-center">
-        <h1>{{ user.name }}</h1>
+      <h1>{{ session.business_name }}</h1>
     </f7-block-title>
 
-    <img v-bind:src="QR" alt="Something went wrong" style="max-width: 480px;" />
+    <img v-bind:src="QR" alt="Something went wrong" style="max-width: 480px" />
 
-    <div style="display: flex; justify-content: center;">
+    <div style="display: flex; justify-content: center">
       <!-- <f7-button @click="print">Print</f7-button>
       <f7-button @click="to_pdf">Download PDF...</f7-button> -->
     </div>
@@ -16,7 +20,7 @@
 <script>
 export default {
   data: function () {
-    return { QR: "", user: window.user };
+    return { QR: "", session: window.Session };
   },
   mounted: function () {
     let options = {
@@ -28,7 +32,7 @@ export default {
 
     window.cordova.plugins.qrcodejs.encode(
       "TEXT_TYPE",
-      this.user.name,
+      this.session.business_name,
       (base64EncodedQRImage) => {
         this.QR = base64EncodedQRImage;
       },

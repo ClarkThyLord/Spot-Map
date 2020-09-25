@@ -85,6 +85,10 @@ export default {
 </script>
 
 <style scoped>
+.theme-dark .panel {
+  background-color: #121212;
+}
+
 .sidebar-content {
   display: flex;
   flex-direction: column;
@@ -99,7 +103,6 @@ export default {
 .logo-space .logo {
   height: 40px;
   height: 40px;
-  border-radius: 50%;
 }
 
 .sidebar-items {

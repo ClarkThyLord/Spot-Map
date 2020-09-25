@@ -1,4 +1,3 @@
-const API_KEY = '';
 const CALLBACK_NAME = 'gmapsCallback';
 
 let initialized = !!window.google;
@@ -29,7 +28,7 @@ export default function init() {
   const script = document.createElement('script');
   script.async = true;
   script.defer = true;
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=${CALLBACK_NAME}`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${window.Session.google_maps_api_key}&callback=${CALLBACK_NAME}`;
   script.onerror = rejectInitPromise;
   document.querySelector('head').appendChild(script);
 

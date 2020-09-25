@@ -6,19 +6,27 @@ function Session() {
   this.theme = "auto";
   this.set_theme = function (theme) {
     this.theme = theme;
+    this.save_session();
   };
   this.dark_theme = 0;
   this.set_dark_theme = function (dark_theme) {
     this.dark_theme = dark_theme;
+    if (dark_theme == 1)
+      document.getElementsByTagName("body")[0].classList.add("theme-dark");
+    else
+      document.getElementsByTagName("body")[0].classList.remove("theme-dark");
+    this.save_session();
   };
   this.language = "english";
   this.set_language = function (language) {
     this.language = language;
+    this.save_session();
   };
 
   this.google_maps_api_key = "";
   this.set_google_maps_api_key = function (google_maps_api_key) {
     this.google_maps_api_key = google_maps_api_key;
+    this.save_session();
   };
 
   this.logged_in = false;
@@ -44,11 +52,11 @@ function Session() {
     if (data) {
       data = JSON.parse(data);
       if (data.version.localeCompare(this.version)) return;
-      this.theme = data.theme;
-      this.dark_theme = data.dark_theme;
-      this.language = data.language;
+      this.set_theme(data.theme);
+      this.set_dark_theme(data.dark_theme);
+      this.set_language(data.language);
 
-      this.google_maps_api_key = data.google_maps_api_key;
+      this.set_google_maps_api_key(data.google_maps_api_key);
 
       this.logged_in = data.logged_in;
       this.business_name = data.business_name;

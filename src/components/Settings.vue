@@ -13,15 +13,11 @@
 
       <f7-block>
         <f7-list no-hairlines-md>
-          <f7-list-item>
-            <span>Dark Theme</span>
-            <f7-toggle :checked="DarkTheme"></f7-toggle>
-          </f7-list-item>
-
           <f7-list-input
             type="select"
             label="Theme"
-            :value="Theme"
+            :value="session.theme"
+            @input="theme_changed"
             placeholder="Please choose..."
           >
             <option value="auto">Auto</option>
@@ -30,11 +26,20 @@
             <option value="aurora">Aurora</option>
           </f7-list-input>
 
+          <f7-list-item>
+            <span>Dark Theme</span>
+            <f7-toggle
+              :value="session.dark_theme"
+              @toggle:change="dark_theme_toggle"
+            ></f7-toggle>
+          </f7-list-item>
+
           <f7-list-input
             type="password"
-            :value="GoogleMapsAPIKey"
             label="Goggle Maps API Key"
             placeholder="Goggle Maps API Key"
+            :value="session.google_maps_api_key"
+            @input="google_maps_api_key_changed"
             clear-button
           >
           </f7-list-input>
@@ -48,11 +53,23 @@
 export default {
   data() {
     return {
-      Theme: "auto",
-      DarkTheme: false,
-      GoogleMapsAPIKey: "",
+      session: window.Session,
       PopupOpened: false,
     };
+  },
+  methods: {
+    theme_changed: function (event) {
+      this.session.theme = event.target.value;
+      console.log(this.session.theme);
+    },
+    dark_theme_toggle: function (toggled) {
+      this.session.dark_theme = toggled ? 1 : 0;
+      console.log(this.session.dark_theme);
+    },
+    google_maps_api_key_changed: function (event) {
+      this.session.google_maps_api_key = event.target.value;
+      console.log(this.session.google_maps_api_key);
+    },
   },
 };
 </script>

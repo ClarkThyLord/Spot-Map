@@ -7,6 +7,7 @@
     </f7-nav-left>
 
     <f7-searchbar
+      v-show="search_visible"
       @input="searching"
       search-container=".search-list"
       search-in=".item-title"
@@ -30,11 +31,20 @@ export default {
   data: function () {
     return {
       search: "",
+      search_visible: true,
       session: window.Session,
       qr_scan: window.cordova.platformId.localeCompare("browser"),
     };
   },
+  mounted() {
+    this.$f7ready(() => {
+      this.$f7.on("routeChange", this.onRouteChange);
+    });
+  },
   methods: {
+    onRouteChange(newRoute, previousRoute) {
+      this.search_visible = newRoute.url == "/";
+    },
     searching: function (event) {
       this.search = event.target.value;
       // TODO Recommend searches

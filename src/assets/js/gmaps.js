@@ -28,7 +28,7 @@ export default function init() {
   const script = document.createElement('script');
   script.async = true;
   script.defer = true;
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${window.Session.google_maps_api_key}&callback=${CALLBACK_NAME}`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${window.Session.google_maps_api_key}&callback=${CALLBACK_NAME}&libraries=places`;
   script.onerror = rejectInitPromise;
   document.querySelector('head').appendChild(script);
 

@@ -75,9 +75,9 @@
                   <f7-icon f7="arrow_down_to_line_alt"></f7-icon>
                   Export
                 </f7-button>
-                <f7-button @click="marker_data_import">
-                  <f7-icon f7="arrow_up_to_line_alt"></f7-icon>
-                  Import
+                <f7-button @click="marker_data_restore">
+                  <f7-icon f7="arrow_clockwise"></f7-icon>
+                  Restore
                 </f7-button>
               </f7-segmented>
             </f7-block>
@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import session from '../core/session';
 export default {
   data() {
     return {
@@ -108,8 +109,8 @@ export default {
     marker_data_export: function () {
       console.log(JSON.stringify(this.session.markers));
     },
-    marker_data_import: function (event) {
-      // TODO Import
+    marker_data_restore: function (event) {
+      session.set_markers(require("../static/markers.json"));
       window.location.reload(true);
     },
   },

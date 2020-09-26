@@ -20,7 +20,14 @@
 <script>
 export default {
   data: function () {
-    return { QR: "", session: window.Session };
+    return {
+      QR: "",
+      session: window.Session,
+      internalization: {
+        english: {},
+        spanish: {},
+      },
+    };
   },
   mounted: function () {
     let options = {

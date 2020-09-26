@@ -7,8 +7,8 @@
     :no-navbar="true"
     :no-toolbar="true"
   >
-    <f7-block-title style="display: flex;">
-      <span style="flex: 1;">
+    <f7-block-title style="display: flex">
+      <span style="flex: 1">
         <h1>History</h1>
       </span>
       <f7-link v-if="history.length > 0" href @click="clear_history">
@@ -26,8 +26,17 @@
         :key="index"
       ></f7-list-item>
     </f7-list>
-    <div v-else style="color: gray; opacity: 0.6; margin: auto;" class="text-align-center justify-content-center align-content-center">
-      <f7-icon f7="tray" size="256px" class="align-self-center" color="gray"></f7-icon>
+    <div
+      v-else
+      style="color: gray; opacity: 0.6; margin: auto"
+      class="text-align-center justify-content-center align-content-center"
+    >
+      <f7-icon
+        f7="tray"
+        size="256px"
+        class="align-self-center"
+        color="gray"
+      ></f7-icon>
       <h1>No History To Show</h1>
     </div>
   </f7-page>
@@ -40,6 +49,11 @@ export default {
       history: [],
       AllowInfinite: true,
       ShowPreloader: true,
+      session: window.Session,
+      internalization: {
+        english: {},
+        spanish: {},
+      },
     };
   },
   mounted: function () {

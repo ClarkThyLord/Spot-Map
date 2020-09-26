@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.1",
+    "@googlemaps/markerclustererplus": "^1.0.2",
     "cordova": "^10.0.0",
     "fastclick": "^1.0.6",
     "framework7": "^5.7.12",

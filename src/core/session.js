@@ -1,7 +1,7 @@
 export default new Session();
 
 function Session() {
-  this.version = "0.0.1";
+  this.version = "0.0.2";
 
   this.theme = "auto";
   this.set_theme = function (theme) {
@@ -35,6 +35,12 @@ function Session() {
     this.save_session();
   };
 
+  this.markers = [];
+  this.set_markers = function (markers) {
+    this.markers = markers;
+    this.save_session();
+  }
+
   this.logged_in = false;
   this.business_name = "";
 
@@ -63,8 +69,8 @@ function Session() {
       this.set_language(data.language);
 
       this.developer_mode = data.developer_mode;
-
       this.set_google_maps_api_key(data.google_maps_api_key);
+      this.markers = data.markers;
 
       this.logged_in = data.logged_in;
       this.business_name = data.business_name;

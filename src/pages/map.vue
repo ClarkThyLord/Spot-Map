@@ -101,11 +101,31 @@ export default {
           );
         }
       });
+
+      this.load_markers();
     } catch (error) {
       console.error(error);
     }
   },
   methods: {
+    save_markers: function () {
+      let markers = [];
+      this.markers.forEach((marker) => {
+        markers.push({
+          title: marker.title,
+          lat: marker.position.lat(),
+          lng: marker.position.lng(),
+        });
+      });
+      this.session.set_markers(markers);
+    },
+    load_markers: function () {
+      console.log(this.session.markers);
+      this.session.markers.forEach((marker) => {
+        console.log(marker);
+        this.add_location(marker.title, marker.lat, marker.lng);
+      });
+    },
     add_location: function (name, lat, lng) {
       let marker = new google.maps.Marker({
         map: this.map,
@@ -114,14 +134,19 @@ export default {
       });
 
       marker.addListener("dblclick", (event) => {
-        let index = this.markers.indexOf(marker);
-        if (index > -1) this.markers.splice(index, 1);
-        this.markerCluster.removeMarker(marker);
-        marker.setMap(null);
+        this.remove_location(marker);
       });
 
       this.markerCluster.addMarker(marker);
       this.markers.push(marker);
+      this.save_markers();
+    },
+    remove_location: function (marker) {
+      let index = this.markers.indexOf(marker);
+      if (index > -1) this.markers.splice(index, 1);
+      this.markerCluster.removeMarker(marker);
+      marker.setMap(null);
+      this.save_markers();
     },
   },
 };

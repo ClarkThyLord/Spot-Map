@@ -5,9 +5,11 @@
     @popup:closed="PopupOpened = false"
   >
     <f7-page>
-      <f7-navbar title="Settings">
+      <f7-navbar :title="internalization[session.language]['settings']">
         <f7-nav-right>
-          <f7-link popup-close>Close</f7-link>
+          <f7-link popup-close>{{
+            internalization[session.language]["close"]
+          }}</f7-link>
         </f7-nav-right>
       </f7-navbar>
 
@@ -15,10 +17,9 @@
         <f7-list no-hairlines-md>
           <f7-list-input
             type="select"
-            label="Language"
+            :label="internalization[session.language]['language']"
             :value="session.language"
             @input="session.set_language($event.target.value)"
-            placeholder="Please choose..."
           >
             <option value="english">English</option>
             <option value="spanish">Spanish</option>
@@ -26,10 +27,9 @@
 
           <f7-list-input
             type="select"
-            label="Theme"
+            :label="internalization[session.language]['theme']"
             :value="session.theme"
             @input="set_theme"
-            placeholder="Please choose..."
           >
             <option value="auto">Auto</option>
             <option value="ios">IOS</option>
@@ -38,7 +38,7 @@
           </f7-list-input>
 
           <f7-list-item>
-            <span>Dark Theme</span>
+            <span>{{ internalization[session.language]["darktheme"] }}</span>
             <f7-toggle
               :value="session.dark_theme"
               :checked="session.dark_theme == 1 ? true : false"
@@ -47,7 +47,7 @@
           </f7-list-item>
 
           <f7-list-item>
-            <span>Developer Mode</span>
+            <span>{{ internalization[session.language]["devmode"] }}</span>
             <f7-toggle
               :value="session.developer_mode"
               :checked="session.developer_mode == 1 ? true : false"
@@ -59,8 +59,8 @@
             <f7-list>
               <f7-list-input
                 type="password"
-                label="Goggle Maps API Key"
-                placeholder="Goggle Maps API Key"
+                :label="internalization[session.language]['mapkey']"
+                :placeholder="internalization[session.language]['mapkey']"
                 :value="session.google_maps_api_key"
                 @input="set_google_maps_api_key"
                 clear-button
@@ -68,16 +68,18 @@
               </f7-list-input>
             </f7-list>
 
-            <f7-block-title>Marker Data</f7-block-title>
+            <f7-block-title>{{
+              internalization[session.language]["markdata"]
+            }}</f7-block-title>
             <f7-block>
               <f7-segmented>
                 <f7-button @click="marker_data_export">
                   <f7-icon f7="arrow_down_to_line_alt"></f7-icon>
-                  Export
+                  {{ internalization[session.language]["export"] }}
                 </f7-button>
                 <f7-button @click="marker_data_restore">
                   <f7-icon f7="arrow_clockwise"></f7-icon>
-                  Restore
+                  {{ internalization[session.language]["restore"] }}
                 </f7-button>
               </f7-segmented>
             </f7-block>
@@ -89,12 +91,38 @@
 </template>
 
 <script>
-import session from '../core/session';
+import session from "../core/session";
 export default {
   data() {
     return {
       PopupOpened: false,
       session: window.Session,
+      internalization: {
+        english: {
+          settings: "Settings",
+          close: "Close",
+          language: "Language",
+          theme: "Theme",
+          darktheme: "Dark Theme",
+          devmode: "Developer Mode",
+          mapkey: "Google Maps API Key",
+          markdata: "Marker Data",
+          export: "Export",
+          restore: "Restore",
+        },
+        spanish: {
+          settings: "Configuraciones",
+          close: "Cerrar",
+          language: "Idioma",
+          theme: "Palette",
+          darktheme: "Modo Oscuro",
+          devmode: "Modo Desarrollador",
+          mapkey: "Clave de API de Google Maps",
+          markdata: "Datos de Marcadores",
+          export: "Exportar",
+          restore: "Restaurar",
+        },
+      },
     };
   },
   methods: {

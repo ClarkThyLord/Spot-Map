@@ -10,6 +10,7 @@
       v-show="search_visible"
       :disable-button="!$theme.aurora"
       id="MapSearch"
+      :placeholder="internalization[session.language]['search']"
     ></f7-searchbar>
 
     <f7-nav-right v-if="qr_scan || session.logged_in">
@@ -32,6 +33,14 @@ export default {
       search_visible: true,
       session: window.Session,
       qr_scan: window.cordova.platformId.localeCompare("browser"),
+      internalization: {
+        english: {
+          "search": "Search...",
+        },
+        spanish: {
+          "search": "Buscar...",
+        },
+      },
     };
   },
   mounted() {

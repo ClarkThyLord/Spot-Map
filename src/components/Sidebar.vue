@@ -14,30 +14,30 @@
               class="float-right"
               panel-close
               @click="logout"
-            >Logout</f7-link>
+            >{{ internalization[session.language]["logout"] }}</f7-link>
           </f7-block-title>
 
           <f7-list>
-            <f7-list-item title="Generate QR" link="/generate-qr/" panel-close></f7-list-item>
+            <f7-list-item :title="internalization[session.language]['genqr']" link="/generate-qr/" panel-close></f7-list-item>
           </f7-list>
         </div>
 
-        <f7-list-item title="Map" link="/" panel-close></f7-list-item>
-        <f7-list-item title="Metrics" link="/metrics/" panel-close></f7-list-item>
-        <f7-list-item v-if="!session.logged_in" title="History" link="/history/" panel-close></f7-list-item>
+        <f7-list-item :title="internalization[session.language]['map']" link="/" panel-close></f7-list-item>
+        <f7-list-item :title="internalization[session.language]['metrics']" link="/metrics/" panel-close></f7-list-item>
+        <f7-list-item v-if="!session.logged_in" :title="internalization[session.language]['history']" link="/history/" panel-close></f7-list-item>
 
         <f7-list>
-          <f7-list-item title="Report COVID-19" link="/report/" panel-close></f7-list-item>
+          <f7-list-item :title="internalization[session.language]['report']" link="/report/" panel-close></f7-list-item>
         </f7-list>
 
         <f7-list>
-          <f7-list-item title="Settings" link="#" popup-open=".Settings" panel-close></f7-list-item>
+          <f7-list-item :title="internalization[session.language]['settings']" link="#" popup-open=".Settings" panel-close></f7-list-item>
         </f7-list>
       </f7-list>
 
       <div class="margin text-align-center justify-content-center">
         <div v-if="!session.logged_in">
-          <f7-link href login-screen-open=".business-login" panel-close>Business? Login here</f7-link>
+          <f7-link href login-screen-open=".business-login" panel-close>{{ internalization[session.language]["login"] }}</f7-link>
           <br />
         </div>
         <f7-link
@@ -73,7 +73,29 @@
 export default {
   data: function() {
     return {
-      session: window.Session
+      session: window.Session,
+      internalization: {
+        english: {
+          logout: "Logout",
+          genqr: "Generate QR",
+          map: "Map",
+          metrics: "Metrics",
+          history: "History",
+          report: "Report COVID-19",
+          settings: "Settings",
+          login: "Business? Login here",
+        },
+        spanish: {
+          logout: "Cerrar Sesión",
+          genqr: "Generar QR",
+          map: "Mapa",
+          metrics: "Métricas",
+          history: "Historial",
+          report: "Reportar COVID-19",
+          settings: "Configuraciones",
+          login: "¿Negocio? Entre aquí",
+        }
+      }
     };
   },
   methods: {

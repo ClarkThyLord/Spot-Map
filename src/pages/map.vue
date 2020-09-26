@@ -120,9 +120,7 @@ export default {
       this.session.set_markers(markers);
     },
     load_markers: function () {
-      console.log(this.session.markers);
       this.session.markers.forEach((marker) => {
-        console.log(marker);
         this.add_location(marker.title, marker.lat, marker.lng);
       });
     },

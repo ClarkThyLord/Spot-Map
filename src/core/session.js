@@ -74,6 +74,8 @@ function Session() {
 
       this.logged_in = data.logged_in;
       this.business_name = data.business_name;
+    } else {
+      this.markers = require("../static/markers.json")
     }
   };
 

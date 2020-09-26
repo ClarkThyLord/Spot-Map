@@ -33,6 +33,7 @@ export default {
   },
   data: function () {
     return {
+      session: window.Session,
       error: false,
       markers: [],
       map: undefined,
@@ -60,8 +61,7 @@ export default {
       });
 
       this.markerCluster = new MarkerClusterer(this.map, this.markers, {
-        imagePath:
-          "./static/cluster/m",
+        imagePath: "./static/cluster/m",
       });
 
       const input = document.querySelector("#MapSearch input");
@@ -70,44 +70,21 @@ export default {
         searchBox.setBounds(this.map.getBounds());
       });
 
-      // let markers = [];
       searchBox.addListener("places_changed", () => {
         const places = searchBox.getPlaces();
 
         if (places.length == 0) {
           return;
         }
-        // Clear out the old markers.
-        // markers.forEach((marker) => {
-        //   marker.setMap(null);
-        // });
-        // markers = [];
-        // For each place, get the icon, name and location.
+
         const bounds = new google.maps.LatLngBounds();
         places.forEach((place) => {
           if (!place.geometry) {
             console.log("Returned place contains no geometry");
             return;
           }
-          // const icon = {
-          //   url: place.icon,
-          //   size: new google.maps.Size(71, 71),
-          //   origin: new google.maps.Point(0, 0),
-          //   anchor: new google.maps.Point(17, 34),
-          //   scaledSize: new google.maps.Size(25, 25),
-          // };
-          // // Create a marker for each place.
-          // markers.push(
-          //   new google.maps.Marker({
-          //     this.map,
-          //     icon,
-          //     title: place.name,
-          //     position: place.geometry.location,
-          //   })
-          // );
 
           if (place.geometry.viewport) {
-            // Only geocodes have viewport.
             bounds.union(place.geometry.viewport);
           } else {
             bounds.extend(place.geometry.location);
@@ -116,24 +93,13 @@ export default {
         this.map.fitBounds(bounds);
       });
 
-      let infoWindow;
       this.map.addListener("click", (mapsMouseEvent) => {
-        // Close the current InfoWindow.
-        if (infoWindow) infoWindow.close();
-
-        // Create a new InfoWindow.
-        // console.log(mapsMouseEvent.latLng);
-        // console.log(mapsMouseEvent.latLng.lat, mapsMouseEvent.latLng.lng);
-        // console.log(this);
-        this.$refs.LocationAdder.open(
-          mapsMouseEvent.latLng.lat(),
-          mapsMouseEvent.latLng.lng()
-        );
-        // infoWindow = new google.maps.InfoWindow({
-        //   position: mapsMouseEvent.latLng,
-        // });
-        // infoWindow.setContent(mapsMouseEvent.latLng.toString());
-        // infoWindow.open(this.map);
+        if (this.session.developer_mode) {
+          this.$refs.LocationAdder.open(
+            mapsMouseEvent.latLng.lat(),
+            mapsMouseEvent.latLng.lng()
+          );
+        }
       });
     } catch (error) {
       console.error(error);
@@ -146,6 +112,14 @@ export default {
         title: name,
         position: { lat: lat, lng: lng },
       });
+
+      marker.addListener("dblclick", (event) => {
+        let index = this.markers.indexOf(marker);
+        if (index > -1) this.markers.splice(index, 1);
+        this.markerCluster.removeMarker(marker);
+        marker.setMap(null);
+      });
+
       this.markerCluster.addMarker(marker);
       this.markers.push(marker);
     },

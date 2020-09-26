@@ -46,6 +46,15 @@
             ></f7-toggle>
           </f7-list-item>
 
+          <f7-list-item>
+            <span>Developer Mode</span>
+            <f7-toggle
+              :value="session.developer_mode"
+              :checked="session.developer_mode == 1 ? true : false"
+              @toggle:change="session.set_developer_mode($event ? 1 : 0)"
+            ></f7-toggle>
+          </f7-list-item>
+
           <f7-list-input
             type="password"
             label="Goggle Maps API Key"

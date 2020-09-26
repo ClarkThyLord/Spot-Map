@@ -23,6 +23,12 @@ function Session() {
     this.save_session();
   };
 
+  this.developer_mode = 0;
+  this.set_developer_mode = function (developer_mode) {
+    this.developer_mode = developer_mode;
+    this.save_session();
+  }
+
   this.google_maps_api_key = "";
   this.set_google_maps_api_key = function (google_maps_api_key) {
     this.google_maps_api_key = google_maps_api_key;
@@ -55,6 +61,8 @@ function Session() {
       this.set_theme(data.theme);
       this.set_dark_theme(data.dark_theme);
       this.set_language(data.language);
+
+      this.developer_mode = data.developer_mode;
 
       this.set_google_maps_api_key(data.google_maps_api_key);
 

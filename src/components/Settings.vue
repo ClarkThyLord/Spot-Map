@@ -81,11 +81,11 @@ export default {
   methods: {
     set_theme: function (event) {
       this.session.set_theme(event.target.value);
-      window.location.href = '.';
+      window.location.reload(true);
     },
     set_google_maps_api_key: function (event) {
       this.session.set_google_maps_api_key(event.target.value);
-      window.location.href = '.';
+      window.location.reload(true);
     }
   }
 };

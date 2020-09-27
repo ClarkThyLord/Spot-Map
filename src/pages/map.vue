@@ -37,7 +37,16 @@ export default {
       error: false,
       markers: [],
       map: undefined,
+      info: undefined,
       markerCluster: undefined,
+      internalization: {
+        english: {
+          "search": "Search...",
+        },
+        spanish: {
+          "search": "Buscar...",
+        },
+      },
     };
   },
   async mounted() {
@@ -59,6 +68,8 @@ export default {
         this.map.setCenter(results[0].geometry.location);
         this.map.fitBounds(results[0].geometry.viewport);
       });
+
+      this.info = new google.maps.InfoWindow();
 
       this.markerCluster = new MarkerClusterer(this.map, this.markers, {
         imagePath: "./static/cluster/m",
@@ -131,6 +142,16 @@ export default {
         position: { lat: lat, lng: lng },
       });
 
+      marker.addListener("click", () => {
+        let url = "";
+        let info_txt = "<b>"+ name + "</b><br />Activity: <i>##.##</i><br />Report Activity: <i>##.##</i><br />";
+        if (window.cordova.platformId == "browser") url = "http://maps.google.com/?q=" + lat + "," + lng;
+        else if (window.cordova.platformId == "ios") url = "comgooglemaps://?q=" + lat + "," + lng;
+        else if (window.cordova.platformId == "android") url = "geo:" + lat + "," + lng;
+        info_txt += '<a href="' + url + '" target="_blank">Get directions...</a>';
+        this.info.setContent(info_txt);
+        this.info.open(this.map, marker);
+      });
       marker.addListener("dblclick", (event) => {
         this.remove_location(marker);
       });

@@ -1,7 +1,7 @@
 export default new Session();
 
 function Session() {
-  this.version = "0.0.2";
+  this.version = "0.0.3";
 
   this.theme = "auto";
   this.set_theme = function (theme) {
@@ -22,6 +22,9 @@ function Session() {
     this.language = language;
     this.save_session();
   };
+
+  this.exposure = Math.random();
+  this.history = [];
 
   this.developer_mode = 0;
   this.set_developer_mode = function (developer_mode) {
@@ -67,6 +70,9 @@ function Session() {
       this.set_theme(data.theme);
       this.set_dark_theme(data.dark_theme);
       this.set_language(data.language);
+      
+      this.exposure = data.exposure;
+      this.history = data.history;
 
       this.developer_mode = data.developer_mode;
       this.set_google_maps_api_key(data.google_maps_api_key);

@@ -8,7 +8,7 @@
         </h1>
       </span>
     </f7-block-title>
-    <div v-if="session.logged_in">
+    <div>
       <f7-gauge
         type="circle"
         :value="gaugeValue"
@@ -18,20 +18,11 @@
         :value-text="`${gaugeValue * 100}%`"
         :value-font-size="41"
         value-text-color="red"
-        :label-text="internalization[session.language]['reportrate']"
-      ></f7-gauge>
-    </div>
-    <div v-else>
-      <f7-gauge
-        type="circle"
-        :value="gaugeValue"
-        :size="250"
-        border-color="red"
-        :border-width="10"
-        :value-text="`${gaugeValue * 100}%`"
-        :value-font-size="41"
-        value-text-color="red"
-        :label-text="internalization[session.language]['exporate']"
+        :label-text="
+          session.logged_in
+            ? internalization[session.language]['reportrate']
+            : internalization[session.language]['exporate']
+        "
       ></f7-gauge>
     </div>
   </f7-page>
@@ -41,21 +32,32 @@
 export default {
   data() {
     return {
-      gaugeValue: 0.5,
       session: window.Session,
       internalization: {
         english: {
           metrics: "Metrics",
           reportrate: "Report Rate",
-          exporate: "Exposure Rate"
+          exporate: "Exposure Rate",
         },
         spanish: {
           metrics: "Métricas",
           reportrate: "Tasa de Reportaje",
-          exporate: "Tasa de Riesgo"
+          exporate: "Tasa de Riesgo",
         },
       },
     };
+  },
+  computed: {
+    gaugeValue: function () {
+      if (this.session.logged_in) {
+        for (let m = 0; m < this.session.markers.length; m++) {
+          if (this.session.markers[m]["title"] == this.session.business_name) {
+            return this.session.markers[m]["reports"] / 100;
+            break;
+          }
+        }
+      } else return this.session.exposure.toFixed(2);
+    },
   },
 };
 </script>

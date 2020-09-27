@@ -9,6 +9,18 @@
       </span>
     </f7-block-title>
     <div>
+      <div v-if="session.logged_in">
+        
+      <f7-gauge
+        type="circle"
+        :value="activity"
+        value-text="30%"
+        value-text-color="green"
+        border-color="lightgreen"
+        :label-text="internalization[session.language]['activity']"
+      ></f7-gauge>
+      <br />
+      </div>
       <f7-gauge
         type="circle"
         :value="gaugeValue"
@@ -24,6 +36,7 @@
             : internalization[session.language]['exporate']
         "
       ></f7-gauge>
+      <br />
     </div>
   </f7-page>
 </template>
@@ -38,11 +51,13 @@ export default {
           metrics: "Metrics",
           reportrate: "Report Rate",
           exporate: "Exposure Rate",
+          activity: "Activity"
         },
         spanish: {
           metrics: "Métricas",
           reportrate: "Tasa de Reportaje",
           exporate: "Tasa de Riesgo",
+          activity: "Actividad"
         },
       },
     };
@@ -58,6 +73,15 @@ export default {
         }
       } else return this.session.exposure.toFixed(2);
     },
+    activity: function () {
+      for (let m = 0; m < this.session.markers.length; m++) {
+        if (this.session.markers[m]["title"] == this.session.business_name) {
+          return this.session.markers[m]["activity"] / 100;
+          break;
+        }
+      }
+      return 0.0;
+    }
   },
 };
 </script>

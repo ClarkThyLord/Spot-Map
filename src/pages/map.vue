@@ -135,16 +135,20 @@ export default {
         this.add_location(marker.title, marker.lat, marker.lng);
       });
     },
-    add_location: function (name, lat, lng) {
+    add_location: function (name, lat, lng, activity = undefined, reports = undefined) {
+      if (activity == undefined) activity = (Math.floor(Math.random() * Math.floor(10)) + Math.random()).toFixed(2);
+      if (reports == undefined) reports = (Math.floor(Math.random() * Math.floor(75 * (activity / 10))));
       let marker = new google.maps.Marker({
         map: this.map,
         title: name,
         position: { lat: lat, lng: lng },
+        activity: activity,
+        reports: reports
       });
 
       marker.addListener("click", () => {
         let url = "";
-        let info_txt = "<b>"+ name + "</b><br />Activity: <i>##.##</i><br />Report Activity: <i>##.##</i><br />";
+        let info_txt = "<b>"+ name + "</b><br />Activity: <i>" + marker.activity + "</i><br />Report Activity: <i>" + marker.reports + "</i><br />";
         if (window.cordova.platformId == "browser") url = "http://maps.google.com/?q=" + lat + "," + lng;
         else if (window.cordova.platformId == "ios") url = "comgooglemaps://?q=" + lat + "," + lng;
         else if (window.cordova.platformId == "android") url = "geo:" + lat + "," + lng;

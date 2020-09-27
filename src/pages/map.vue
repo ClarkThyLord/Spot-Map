@@ -41,10 +41,10 @@ export default {
       markerCluster: undefined,
       internalization: {
         english: {
-          "search": "Search...",
+          search: "Search...",
         },
         spanish: {
-          "search": "Buscar...",
+          search: "Buscar...",
         },
       },
     };
@@ -126,33 +126,56 @@ export default {
           title: marker.title,
           lat: marker.position.lat(),
           lng: marker.position.lng(),
+          activity: marker.activity,
+          reports: marker.reports,
         });
       });
       this.session.set_markers(markers);
     },
     load_markers: function () {
       this.session.markers.forEach((marker) => {
-        this.add_location(marker.title, marker.lat, marker.lng);
+        this.add_location(marker.title, marker.lat, marker.lng, marker.activity, marker.reports);
       });
     },
-    add_location: function (name, lat, lng, activity = undefined, reports = undefined) {
-      if (activity == undefined) activity = (Math.floor(Math.random() * Math.floor(10)) + Math.random()).toFixed(2);
-      if (reports == undefined) reports = (Math.floor(Math.random() * Math.floor(75 * (activity / 10))));
+    add_location: function (
+      name,
+      lat,
+      lng,
+      activity = undefined,
+      reports = undefined
+    ) {
+      if (activity == undefined)
+        activity = (
+          Math.floor(Math.random() * Math.floor(10)) + Math.random()
+        ).toFixed(2);
+      if (reports == undefined)
+        reports = Math.floor(Math.random() * Math.floor(75 * (activity / 10)));
       let marker = new google.maps.Marker({
         map: this.map,
         title: name,
         position: { lat: lat, lng: lng },
         activity: activity,
-        reports: reports
+        reports: reports,
       });
 
       marker.addListener("click", () => {
         let url = "";
-        let info_txt = "<b>"+ name + "</b><br />Activity: <i>" + marker.activity + "</i><br />Report Activity: <i>" + marker.reports + "</i><br />";
-        if (window.cordova.platformId == "browser") url = "http://maps.google.com/?q=" + lat + "," + lng;
-        else if (window.cordova.platformId == "ios") url = "comgooglemaps://?q=" + lat + "," + lng;
-        else if (window.cordova.platformId == "android") url = "geo:" + lat + "," + lng;
-        info_txt += '<a href="' + url + '" target="_blank">Get directions...</a>';
+        let info_txt =
+          "<b>" +
+          name +
+          "</b><br />Activity: <i>" +
+          marker.activity +
+          "</i><br />Report Activity: <i>" +
+          marker.reports +
+          "</i><br />";
+        if (window.cordova.platformId == "browser")
+          url = "http://maps.google.com/?q=" + lat + "," + lng;
+        else if (window.cordova.platformId == "ios")
+          url = "comgooglemaps://?q=" + lat + "," + lng;
+        else if (window.cordova.platformId == "android")
+          url = "geo:" + lat + "," + lng;
+        info_txt +=
+          '<a href="' + url + '" target="_blank">Get directions...</a>';
         this.info.setContent(info_txt);
         this.info.open(this.map, marker);
       });

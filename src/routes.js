@@ -10,7 +10,8 @@ import Report from './pages/report.vue';
 export default [
   {
     path: '/',
-    component: Map
+    component: Map,
+    name: "map"
   },
   {
     path: '/metrics',

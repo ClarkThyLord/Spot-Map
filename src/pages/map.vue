@@ -43,12 +43,12 @@ export default {
         english: {
           activity: "Activity",
           reports: "Report Rate",
-          directions: "Get directions"
+          directions: "Get directions",
         },
         spanish: {
           activity: "Actividad",
           reports: "Tasa de Reportaje",
-          directions: "Direcciones"
+          directions: "Direcciones",
         },
       },
     };
@@ -63,7 +63,20 @@ export default {
         streetViewControl: false,
       });
 
-      geocoder.geocode({ address: "Tijuana" }, (results, status) => {
+      let location = { address: "Tijuana" };
+      if (
+        this.$f7.views.main.router.currentRoute.query.lat != undefined &&
+        this.$f7.views.main.router.currentRoute.query.lng != undefined
+      ) {
+        location = {
+          location: {
+            lat: parseFloat(this.$f7.views.main.router.currentRoute.query.lat),
+            lng: parseFloat(this.$f7.views.main.router.currentRoute.query.lng),
+          },
+        };
+      }
+
+      geocoder.geocode(location, (results, status) => {
         if (status !== "OK" || !results[0]) {
           this.error = true;
           throw new Error(status);
@@ -138,7 +151,13 @@ export default {
     },
     load_markers: function () {
       this.session.markers.forEach((marker) => {
-        this.add_location(marker.title, marker.lat, marker.lng, marker.activity, marker.reports);
+        this.add_location(
+          marker.title,
+          marker.lat,
+          marker.lng,
+          marker.activity,
+          marker.reports
+        );
       });
     },
     add_location: function (
@@ -167,9 +186,13 @@ export default {
         let info_txt =
           "<b>" +
           name +
-          "</b><br />" + this.internalization[this.session.language]["activity"] + ": <i>" +
+          "</b><br />" +
+          this.internalization[this.session.language]["activity"] +
+          ": <i>" +
           marker.activity +
-          "</i><br />" + this.internalization[this.session.language]["reports"] + ": <i>" +
+          "</i><br />" +
+          this.internalization[this.session.language]["reports"] +
+          ": <i>" +
           marker.reports +
           "</i><br />";
         if (window.cordova.platformId == "browser")
@@ -179,7 +202,11 @@ export default {
         else if (window.cordova.platformId == "android")
           url = "geo:" + lat + "," + lng;
         info_txt +=
-          '<a href="' + url + '" target="_blank">' + this.internalization[this.session.language]["directions"] + '...</a>';
+          '<a href="' +
+          url +
+          '" target="_blank">' +
+          this.internalization[this.session.language]["directions"] +
+          "...</a>";
         this.info.setContent(info_txt);
         this.info.open(this.map, marker);
       });

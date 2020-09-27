@@ -19,10 +19,9 @@
       <f7-list-item
         v-for="(location, index) in history"
         link
-        @click="open_location"
+        @click="open_location(location)"
         :title="location.title"
         :subtitle="location.timestamp"
-        :text="location.address"
         :key="index"
       ></f7-list-item>
     </f7-list>
@@ -66,8 +65,11 @@ export default {
       this.session.history = [];
       this.session.save_session();
     },
-    open_location: function () {
-      console.log("opening location...");
+    open_location: function (location) {
+      this.$f7.views.main.router.navigate({
+        name: "map",
+        query: { lat: location.lat, lng: location.lng },
+      });
     },
     load_history: function () {
       if (!this.AllowInfinite) return;
@@ -87,19 +89,27 @@ export default {
         ];
 
         let stamp = this.history[this.history.length - 1];
-        if (stamp != undefined)
-          stamp = new Date(stamp["timestamp"]);
+        if (stamp != undefined) stamp = new Date(stamp["timestamp"]);
         else stamp = new Date();
 
-        stamp.setDate(stamp.getDate() - Math.floor(Math.random() * Math.floor(4)));
-        stamp.setHours(stamp.getHours() - Math.floor(Math.random() * Math.floor(24)));
-        stamp.setMinutes(stamp.getMinutes() - Math.floor(Math.random() * Math.floor(61)));
-        stamp.setSeconds(stamp.getSeconds() - Math.floor(Math.random() * Math.floor(61)));
+        stamp.setDate(
+          stamp.getDate() - Math.floor(Math.random() * Math.floor(4))
+        );
+        stamp.setHours(
+          stamp.getHours() - Math.floor(Math.random() * Math.floor(24))
+        );
+        stamp.setMinutes(
+          stamp.getMinutes() - Math.floor(Math.random() * Math.floor(61))
+        );
+        stamp.setSeconds(
+          stamp.getSeconds() - Math.floor(Math.random() * Math.floor(61))
+        );
 
         this.history.push({
           title: marker["title"],
           timestamp: stamp.toLocaleString(),
-          address: "Very long adress placeholder",
+          lat: marker["lat"],
+          lng: marker["lng"],
         });
       }
       this.session.save_session();

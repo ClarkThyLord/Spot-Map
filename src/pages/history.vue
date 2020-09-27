@@ -46,7 +46,8 @@
 export default {
   data: function () {
     return {
-      history: [],
+      today: new Date(),
+      history: window.Session.history,
       AllowInfinite: true,
       ShowPreloader: true,
       session: window.Session,
@@ -57,42 +58,51 @@ export default {
     };
   },
   mounted: function () {
-    for (let count = 0; count < 20; count++) {
-      this.history.push({
-        title: "Title placeholder",
-        timestamp: "MM/DD/YYYY HH:MM:SS",
-        address: "Very long adress placeholder",
-      });
-    }
+    if (this.history.length < 20) this.create_history(20);
   },
   methods: {
     clear_history: function () {
       this.history = [];
+      this.session.history = [];
+      this.session.save_session();
     },
     open_location: function () {
       console.log("opening location...");
     },
     load_history: function () {
-      const self = this;
-      if (!self.AllowInfinite) return;
-      self.AllowInfinite = false;
-
+      if (!this.AllowInfinite) return;
+      this.AllowInfinite = false;
       setTimeout(() => {
-        if (self.history.length >= 200) {
-          self.ShowPreloader = false;
+        if (this.history.length >= 200) {
+          this.ShowPreloader = false;
           return;
-        }
-
-        for (let i = 1; i <= 20; i += 1) {
-          this.history.push({
-            title: "Title placeholder",
-            timestamp: "MM/DD/YYYY HH:MM:SS",
-            address: "Very long adress placeholder",
-          });
-        }
-
-        self.AllowInfinite = true;
+        } else this.create_history(20);
+        this.AllowInfinite = true;
       }, 1000);
+    },
+    create_history: function (amount) {
+      for (let count = 0; count < amount; count++) {
+        let marker = this.session.markers[
+          Math.floor(Math.random() * Math.floor(this.session.markers.length))
+        ];
+
+        let stamp = this.history[this.history.length - 1];
+        if (stamp != undefined)
+          stamp = new Date(stamp["timestamp"]);
+        else stamp = new Date();
+
+        stamp.setDate(stamp.getDate() - Math.floor(Math.random() * Math.floor(4)));
+        stamp.setHours(stamp.getHours() - Math.floor(Math.random() * Math.floor(24)));
+        stamp.setMinutes(stamp.getMinutes() - Math.floor(Math.random() * Math.floor(61)));
+        stamp.setSeconds(stamp.getSeconds() - Math.floor(Math.random() * Math.floor(61)));
+
+        this.history.push({
+          title: marker["title"],
+          timestamp: stamp.toLocaleString(),
+          address: "Very long adress placeholder",
+        });
+      }
+      this.session.save_session();
     },
   },
 };

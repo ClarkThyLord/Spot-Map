@@ -41,10 +41,14 @@ export default {
       markerCluster: undefined,
       internalization: {
         english: {
-          search: "Search...",
+          activity: "Activity",
+          reports: "Report Rate",
+          directions: "Get directions"
         },
         spanish: {
-          search: "Buscar...",
+          activity: "Actividad",
+          reports: "Tasa de Reportaje",
+          directions: "Direcciones"
         },
       },
     };
@@ -163,9 +167,9 @@ export default {
         let info_txt =
           "<b>" +
           name +
-          "</b><br />Activity: <i>" +
+          "</b><br />" + this.internalization[this.session.language]["activity"] + ": <i>" +
           marker.activity +
-          "</i><br />Report Activity: <i>" +
+          "</i><br />" + this.internalization[this.session.language]["reports"] + ": <i>" +
           marker.reports +
           "</i><br />";
         if (window.cordova.platformId == "browser")
@@ -175,7 +179,7 @@ export default {
         else if (window.cordova.platformId == "android")
           url = "geo:" + lat + "," + lng;
         info_txt +=
-          '<a href="' + url + '" target="_blank">Get directions...</a>';
+          '<a href="' + url + '" target="_blank">' + this.internalization[this.session.language]["directions"] + '...</a>';
         this.info.setContent(info_txt);
         this.info.open(this.map, marker);
       });

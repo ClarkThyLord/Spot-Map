@@ -26,7 +26,7 @@ You'll find all of the source code, assets and anything else related to Spot-Map
 ## Description
 The unfortunate truth that we as a society have to come to terms with, is that during the return to the new normality, there will be several people who underestimate the effect and reach of the virus. Due to this problem we offer a simple yet effective solution, Spot-Map.
 
-Spot-Map is a lightweight progressive web application designed to ensure safe traffic around small businesses during the COVID-19 pandemic. While this crisis has taken its toll on local restaurants and shops by restricting customer capacity, the need for a community supported data map to plan secure travels is stronger than ever. Through user created “pings”, a spot map of the location's activities is generated, allowing users to make well-informed decisions of when and where to travel.
+Spot-Map is a lightweight progressive web application designed to ensure safe traffic around small businesses during the COVID-19 pandemic. While this crisis has taken its toll on local restaurants and shops by restricting customer capacity, the need for a community supported data map to plan secure travels is stronger than ever. Through user created “spots”, a spot map of the location's activities is generated, allowing users to make well-informed decisions of when and where to travel.
 
 ## [COVID-19 Data Challenge: Navigating Life and Work in Border Communities](https://mexico.ucsd.edu/initiatives/border-solutions/data-challenge.html)
 

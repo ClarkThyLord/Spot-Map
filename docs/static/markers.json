@@ -1,0 +1,595 @@
+[{
+    "title": "Jack in the Box",
+    "lat": 32.545293786196396,
+    "lng": -117.02996134757996,
+    "activity": "8.78",
+    "reports": 54
+}, {
+    "title": "Burger King",
+    "lat": 32.546008263197976,
+    "lng": -117.03179061412811,
+    "activity": "5.98",
+    "reports": 18
+}, {
+    "title": "McDonalds",
+    "lat": 32.55747432925588,
+    "lng": -117.05831669424052,
+    "activity": "3.31",
+    "reports": 15
+}, {
+    "title": "Mariscos German",
+    "lat": 32.56753938889102,
+    "lng": -117.06331729888916,
+    "activity": "5.43",
+    "reports": 13
+}, {
+    "title": "Church's Chicken",
+    "lat": 32.57375993643327,
+    "lng": -117.05366134643555,
+    "activity": "8.21",
+    "reports": 49
+}, {
+    "title": "AYCE Marketplace",
+    "lat": 32.57726784565577,
+    "lng": -117.03585147857666,
+    "activity": "4.68",
+    "reports": 16
+}, {
+    "title": "Tacos El Gordo",
+    "lat": 32.58356003998394,
+    "lng": -117.06301689147949,
+    "activity": "8.81",
+    "reports": 16
+}, {
+    "title": "Olive Garden",
+    "lat": 32.62820746160641,
+    "lng": -117.0873498916626,
+    "activity": "3.92",
+    "reports": 6
+}, {
+    "title": "Tacos El Gordo",
+    "lat": 32.62907488333556,
+    "lng": -117.08902359008789,
+    "activity": "4.97",
+    "reports": 19
+}, {
+    "title": "La Bella Pizza",
+    "lat": 32.63861596742156,
+    "lng": -117.07846641540527,
+    "activity": "8.08",
+    "reports": 2
+}, {
+    "title": "Dennys",
+    "lat": 32.57690621187388,
+    "lng": -117.08498954772949,
+    "activity": "4.31",
+    "reports": 26
+}, {
+    "title": "Taco Bell",
+    "lat": 32.5767977214549,
+    "lng": -117.08112716674805,
+    "activity": "2.17",
+    "reports": 5
+}, {
+    "title": "Don Pancho's",
+    "lat": 32.58497029882089,
+    "lng": -117.11842060089111,
+    "activity": "5.60",
+    "reports": 14
+}, {
+    "title": "SEA 180",
+    "lat": 32.581318044369404,
+    "lng": -117.13223934173584,
+    "activity": "6.03",
+    "reports": 4
+}, {
+    "title": "Bar & Grill",
+    "lat": 32.5768338849425,
+    "lng": -117.13157415390015,
+    "activity": "4.05",
+    "reports": 21
+}, {
+    "title": "Little Ceasars",
+    "lat": 32.58308994877487,
+    "lng": -117.1001386642456,
+    "activity": "4.13",
+    "reports": 23
+}, {
+    "title": "Jack in the Box",
+    "lat": 32.57556815419977,
+    "lng": -117.06923961639404,
+    "activity": "8.14",
+    "reports": 34
+}, {
+    "title": "McDonald's",
+    "lat": 32.58417477092254,
+    "lng": -117.0397138595581,
+    "activity": "5.52",
+    "reports": 30
+}, {
+    "title": "Chipotle Mexican grill",
+    "lat": 32.63155060327627,
+    "lng": -117.08810091018677,
+    "activity": "6.87",
+    "reports": 24
+}, {
+    "title": "Filippi's Pizza",
+    "lat": 32.64537361970862,
+    "lng": -117.0953106880188,
+    "activity": "2.16",
+    "reports": 12
+}, {
+    "title": "La Concha Bakery",
+    "lat": 32.64416306178365,
+    "lng": -117.0826506614685,
+    "activity": "7.10",
+    "reports": 29
+}, {
+    "title": "Starbucks",
+    "lat": 32.56739471986157,
+    "lng": -116.96542739868164,
+    "activity": "8.42",
+    "reports": 41
+}, {
+    "title": "Tu Taco Taco Shop",
+    "lat": 32.603916240135106,
+    "lng": -117.05130100250244,
+    "activity": "1.91",
+    "reports": 10
+}, {
+    "title": "Little Ceasars Pizza",
+    "lat": 32.61693021407881,
+    "lng": -117.05782413482666,
+    "activity": "1.17",
+    "reports": 2
+}, {
+    "title": "McDonalds",
+    "lat": 32.614725201571844,
+    "lng": -117.02550888061523,
+    "activity": "2.55",
+    "reports": 2
+}, {
+    "title": "El Pollo Loco",
+    "lat": 32.60662764065916,
+    "lng": -117.06589221954346,
+    "activity": "0.46",
+    "reports": 2
+}, {
+    "title": "JL China House Buffet",
+    "lat": 32.6031208804128,
+    "lng": -117.06477642059326,
+    "activity": "7.41",
+    "reports": 47
+}, {
+    "title": "McDonalds",
+    "lat": 32.628641173521956,
+    "lng": -117.03872680664062,
+    "activity": "4.46",
+    "reports": 17
+}, {
+    "title": "Starbucks",
+    "lat": 32.57976307900018,
+    "lng": -117.0347785949707,
+    "activity": "6.63",
+    "reports": 18
+}, {
+    "title": "Jack In the Box",
+    "lat": 32.603301644606155,
+    "lng": -117.0778226852417,
+    "activity": "2.24",
+    "reports": 9
+}, {
+    "title": "Starbucks",
+    "lat": 32.60340097564829,
+    "lng": -117.08388321683879,
+    "activity": "6.27",
+    "reports": 23
+}, {
+    "title": "IHOP",
+    "lat": 32.606555337710354,
+    "lng": -117.08031177520752,
+    "activity": "7.54",
+    "reports": 48
+}, {
+    "title": "Krispy Kreme",
+    "lat": 32.64922200097964,
+    "lng": -116.96540594100952,
+    "activity": "5.99",
+    "reports": 7
+}, {
+    "title": "Lolitas Mexican Food",
+    "lat": 32.65223916061079,
+    "lng": -116.953604221344,
+    "activity": "2.77",
+    "reports": 17
+}, {
+    "title": "Starbucks",
+    "lat": 32.63117111780314,
+    "lng": -117.08930253982544,
+    "activity": "4.35",
+    "reports": 8
+}, {
+    "title": "Mariscos Fill Carreta",
+    "lat": 32.62553285834835,
+    "lng": -117.08767175674438,
+    "activity": "6.32",
+    "reports": 5
+}, {
+    "title": "Krua Thai Chula Vista",
+    "lat": 32.62465636624405,
+    "lng": -117.08728551864624,
+    "activity": "7.38",
+    "reports": 43
+}, {
+    "title": "Church's Chicken",
+    "lat": 32.68442790085975,
+    "lng": -117.07554817199707,
+    "activity": "7.00",
+    "reports": 29
+}, {
+    "title": "Jack in the Box",
+    "lat": 32.69230171908862,
+    "lng": -117.10284233093262,
+    "activity": "1.37",
+    "reports": 6
+}, {
+    "title": "McDonalds",
+    "lat": 32.71869922440848,
+    "lng": -117.15412616729736,
+    "activity": "9.06",
+    "reports": 62
+}, {
+    "title": "Burger Bench",
+    "lat": 33.122636643302236,
+    "lng": -117.0792818069458,
+    "activity": "4.70",
+    "reports": 10
+}, {
+    "title": "Popeyes",
+    "lat": 33.13316693726794,
+    "lng": -117.06035614013672,
+    "activity": "7.36",
+    "reports": 53
+}, {
+    "title": "Petersons Donut Corner",
+    "lat": 33.1129318413712,
+    "lng": -117.07919597625732,
+    "activity": "3.23",
+    "reports": 16
+}, {
+    "title": "McDonalds",
+    "lat": 33.116957667134784,
+    "lng": -117.09726333618164,
+    "activity": "8.10",
+    "reports": 7
+}, {
+    "title": "In-N-Out Burger",
+    "lat": 33.11516044628884,
+    "lng": -117.10189819335938,
+    "activity": "3.05",
+    "reports": 19
+}, {
+    "title": "Jack in the Box",
+    "lat": 33.1051312789315,
+    "lng": -117.07284450531006,
+    "activity": "6.84",
+    "reports": 35
+}, {
+    "title": "Forgotten Barrel Winery",
+    "lat": 33.10225532082615,
+    "lng": -117.08670616149902,
+    "activity": "5.61",
+    "reports": 38
+}, {
+    "title": "McDonalds",
+    "lat": 33.13049459311271,
+    "lng": -117.06759974713869,
+    "activity": "0.53",
+    "reports": 2
+}, {
+    "title": "Jack in the Box",
+    "lat": 33.14750479443435,
+    "lng": -117.10803508758545,
+    "activity": "5.68",
+    "reports": 17
+}, {
+    "title": "San Antonio Winery",
+    "lat": 34.063752280364135,
+    "lng": -118.22396278381348,
+    "activity": "4.90",
+    "reports": 15
+}, {
+    "title": "Grand Central Market",
+    "lat": 34.05066824173537,
+    "lng": -118.24885368347168,
+    "activity": "3.07",
+    "reports": 13
+}, {
+    "title": "Little Damage",
+    "lat": 34.044409944133456,
+    "lng": -118.25237274169922,
+    "activity": "1.36",
+    "reports": 8
+}, {
+    "title": "Urth Caffe",
+    "lat": 34.042062963450476,
+    "lng": -118.23546409606934,
+    "activity": "0.56",
+    "reports": 1
+}, {
+    "title": "Original Tommy's World Famous Hamburgers",
+    "lat": 34.0695114614315,
+    "lng": -118.27631950378418,
+    "activity": "0.50",
+    "reports": 2
+}, {
+    "title": "California Donuts",
+    "lat": 34.06880047260377,
+    "lng": -118.29322814941406,
+    "activity": "6.57",
+    "reports": 17
+}, {
+    "title": "Pinks Hot Dogs",
+    "lat": 34.083943244615305,
+    "lng": -118.3443832397461,
+    "activity": "6.08",
+    "reports": 36
+}, {
+    "title": "Cactus Taquerias #1",
+    "lat": 34.0881372425421,
+    "lng": -118.32648754119873,
+    "activity": "2.75",
+    "reports": 15
+}, {
+    "title": "Providence",
+    "lat": 34.08364112657401,
+    "lng": -118.33022117614746,
+    "activity": "2.22",
+    "reports": 7
+}, {
+    "title": "Milk",
+    "lat": 34.075981185564046,
+    "lng": -118.34850311279297,
+    "activity": "2.82",
+    "reports": 16
+}, {
+    "title": "KFC",
+    "lat": 34.0698669536079,
+    "lng": -118.34968328475952,
+    "activity": "4.50",
+    "reports": 31
+}, {
+    "title": "Jack in the Box",
+    "lat": 34.09384145710549,
+    "lng": -118.33891153335571,
+    "activity": "3.81",
+    "reports": 1
+}, {
+    "title": "Del Taco",
+    "lat": 34.008700369471114,
+    "lng": -117.86162853240967,
+    "activity": "2.66",
+    "reports": 12
+}, {
+    "title": "McDonalds",
+    "lat": 34.0036841761734,
+    "lng": -117.88900852203369,
+    "activity": "3.88",
+    "reports": 25
+}, {
+    "title": "Carls Jr",
+    "lat": 33.99699545757004,
+    "lng": -117.87089824676514,
+    "activity": "2.25",
+    "reports": 7
+}, {
+    "title": "Thirsty Cow",
+    "lat": 33.98671230456457,
+    "lng": -117.89063930511475,
+    "activity": "2.95",
+    "reports": 21
+}, {
+    "title": "In-N-out Burger",
+    "lat": 34.0898076753892,
+    "lng": -117.94093608856201,
+    "activity": "4.33",
+    "reports": 25
+}, {
+    "title": "Taqueria Cancun",
+    "lat": 37.76050314606226,
+    "lng": -122.41945266723633,
+    "activity": "1.41",
+    "reports": 1
+}, {
+    "title": "La Taqueria",
+    "lat": 37.75090092768723,
+    "lng": -122.41812229156494,
+    "activity": "5.97",
+    "reports": 33
+}, {
+    "title": "The Ice Cream Bar",
+    "lat": 37.76647421515012,
+    "lng": -122.45026588439941,
+    "activity": "0.08",
+    "reports": 0
+}, {
+    "title": "Piccino",
+    "lat": 37.75758528925716,
+    "lng": -122.38996982574463,
+    "activity": "2.41",
+    "reports": 1
+}, {
+    "title": "Dumpling Time",
+    "lat": 37.76969703507008,
+    "lng": -122.40241527557373,
+    "activity": "8.05",
+    "reports": 26
+}, {
+    "title": "Lucky",
+    "lat": 37.7761931346081,
+    "lng": -122.44580268859863,
+    "activity": "4.15",
+    "reports": 5
+}, {
+    "title": "Mymy",
+    "lat": 37.790913252828794,
+    "lng": -122.41923809051514,
+    "activity": "1.85",
+    "reports": 4
+}, {
+    "title": "Blue Barn",
+    "lat": 37.79752617623693,
+    "lng": -122.4223279953003,
+    "activity": "3.64",
+    "reports": 15
+}, {
+    "title": "China Live",
+    "lat": 37.797865284558576,
+    "lng": -122.40788698196411,
+    "activity": "5.60",
+    "reports": 7
+}, {
+    "title": "In-N-Out Burger",
+    "lat": 37.807800467357744,
+    "lng": -122.41837978363037,
+    "activity": "5.84",
+    "reports": 37
+}, {
+    "title": "Rose's Cafe",
+    "lat": 37.797051421971396,
+    "lng": -122.43706941604614,
+    "activity": "4.12",
+    "reports": 26
+}, {
+    "title": "Salt & Straw",
+    "lat": 37.78998061344339,
+    "lng": -122.4342155456543,
+    "activity": "4.93",
+    "reports": 10
+}, {
+    "title": "Sweet Maple",
+    "lat": 37.78572423698848,
+    "lng": -122.43513822555542,
+    "activity": "2.15",
+    "reports": 0
+}, {
+    "title": "McDonald's",
+    "lat": 33.94108055838566,
+    "lng": -118.28725959286922,
+    "activity": "9.51",
+    "reports": 53
+}, {
+    "title": "Whole foods",
+    "lat": 33.954340745366586,
+    "lng": -118.25439594628526,
+    "activity": "9.04",
+    "reports": 59
+}, {
+    "title": "GAP",
+    "lat": 33.96243182053239,
+    "lng": -118.2829444768209,
+    "activity": "1.20",
+    "reports": 3
+}, {
+    "title": "Cool cafe",
+    "lat": 37.74736960367742,
+    "lng": -122.42536817972982,
+    "activity": "6.86",
+    "reports": 32
+}, {
+    "title": "The spot",
+    "lat": 37.75766771567753,
+    "lng": -122.42862974589193,
+    "activity": "3.06",
+    "reports": 21
+}, {
+    "title": "Whole foods",
+    "lat": 37.74804943571967,
+    "lng": -122.47144569689556,
+    "activity": "0.21",
+    "reports": 0
+}, {
+    "title": "Farmacia Roma",
+    "lat": 32.507881932073644,
+    "lng": -116.9996020448045,
+    "activity": "7.62",
+    "reports": 6
+}, {
+    "title": "Bancomer",
+    "lat": 32.50829992788223,
+    "lng": -116.98435940482584,
+    "activity": "6.25",
+    "reports": 4
+}, {
+    "title": "Banamex",
+    "lat": 32.50829992788223,
+    "lng": -116.98412337043253,
+    "activity": "7.90",
+    "reports": 40
+}, {
+    "title": "Tacos Walter",
+    "lat": 32.50310520764496,
+    "lng": -116.968217266814,
+    "activity": "9.50",
+    "reports": 8
+}, {
+    "title": "Tacos el Christian",
+    "lat": 32.49664415913503,
+    "lng": -117.03270510504514,
+    "activity": "6.94",
+    "reports": 43
+}, {
+    "title": "Bancomer",
+    "lat": 32.52251152824651,
+    "lng": -117.02610354776847,
+    "activity": "8.75",
+    "reports": 35
+}, {
+    "title": "Las ahumaderas",
+    "lat": 32.519326282881984,
+    "lng": -117.02055022090988,
+    "activity": "0.13",
+    "reports": 0
+}, {
+    "title": "Hanabi",
+    "lat": 32.520652068779796,
+    "lng": -117.02573933252005,
+    "activity": "0.75",
+    "reports": 4
+}, {
+    "title": "Mariscos David",
+    "lat": 32.49887376329693,
+    "lng": -117.06763263968601,
+    "activity": "8.37",
+    "reports": 19
+}, {
+    "title": "Soriana",
+    "lat": 32.52167541809783,
+    "lng": -116.99050318460034,
+    "activity": "8.63",
+    "reports": 51
+}, {
+    "title": "D'volada",
+    "lat": 32.37108053260344,
+    "lng": -117.06120653045387,
+    "activity": "3.50",
+    "reports": 4
+}, {
+    "title": "Carnitas Oscar",
+    "lat": 32.35448232704711,
+    "lng": -117.06420575111106,
+    "activity": "3.38",
+    "reports": 12
+}, {
+    "title": "Rey del pollo",
+    "lat": 32.373048296022866,
+    "lng": -117.05388677199124,
+    "activity": "4.79",
+    "reports": 15
+}, {
+    "title": "Tacos el faustino",
+    "lat": 32.37015248520144,
+    "lng": -117.04930068537178,
+    "activity": "2.18",
+    "reports": 7
+}]

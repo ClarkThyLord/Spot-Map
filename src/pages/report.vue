@@ -173,10 +173,11 @@ export default {
         this.start_of_symptoms,
         this.$f7.smartSelect.get(".smart-select").getValue()
       );
-
+      
       // TODO Send report to server
 
       this.clear();
+      this.$f7.views.main.router.navigate("/");
     },
   },
 };

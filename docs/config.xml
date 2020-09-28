@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="xyz.spot.map" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <hook src="hooks/hookers.js" type="before_prepare" />
+    <hook src="hooks/beforedep.js" type="before_deploy" />
+    <name>Spot-Map</name>
+    <description>
+        Entry for the COVID-19 Data Challenge
+    </description>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="ShowSplashScreen" value="false" />
+    <preference name="SplashScreen" value="./res/Spot-Map.jpg" />
+    <preference name="SplashScreenBackgroundColor" value="white" />
+</widget>

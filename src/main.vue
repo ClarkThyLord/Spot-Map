@@ -4,6 +4,8 @@
     <navbar />
     <sidebar />
 
+    <notice />
+
     <login />
     <settings />
 
@@ -20,6 +22,8 @@ window.QrScanner = QrScanner;
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
 
+import Notice from "./components/Notice.vue"
+
 import Login from "./components/Login.vue";
 import Settings from "./components/Settings.vue";
 
@@ -34,8 +38,9 @@ export default {
     f7Statusbar,
     Navbar,
     Sidebar,
+    Notice,
     Login,
-    Settings
+    Settings,
   },
   data() {
     return {

@@ -11,6 +11,9 @@
 	<a href="https://github.com/ClarkThyLord/Spot-Map/releases">
 		<img src="https://img.shields.io/badge/Version-1.0.0-green.svg" alt="Version">
 	</a>
+	<a href="#">
+		<img src="https://img.shields.io/badge/Retail&Leisure-1st-blue.svg" alt="Version">
+	</a>
 	<a href="https://github.com/ClarkThyLord/Spot-Map/blob/master/LICENSE">
 		<img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License">
 	</a>
